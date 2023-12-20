@@ -1,16 +1,17 @@
-import bookmark from "../../images/bookmark.svg";
 import defalutAvatar from "../../images/defalutAvatar.svg";
-import home from "../../images/home.svg";
+
 import logo from "../../images/logo.svg";
-import movies from "../../images/movies.svg";
-import tvSeries from "../../images/tvSeries.svg";
+
 import {
+  BookmarkIcon,
+  HomeIcon,
+  MoviesIcon,
   Nav,
   NavigationItem,
-  NavigationItemImage,
   NavigationList,
   NavigationLogo,
   NavigationUserImage,
+  TvSeriesIcon,
   WrapperNavigation,
 } from "./styled";
 export default function Navigation() {
@@ -20,16 +21,16 @@ export default function Navigation() {
         <NavigationLogo src={logo} />
         <NavigationList>
           <NavigationItem>
-            <NavigationItemImage src={home} />
+            <HomeIcon />
           </NavigationItem>
           <NavigationItem>
-            <NavigationItemImage src={movies} />
+            <MoviesIcon />
           </NavigationItem>
           <NavigationItem>
-            <NavigationItemImage src={tvSeries} />
+            <TvSeriesIcon />
           </NavigationItem>
           <NavigationItem>
-            <NavigationItemImage src={bookmark} />
+            <BookmarkIcon />
           </NavigationItem>
         </NavigationList>
       </WrapperNavigation>

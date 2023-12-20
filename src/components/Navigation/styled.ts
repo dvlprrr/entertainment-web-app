@@ -1,5 +1,8 @@
 import styled from "styled-components";
-
+import { ReactComponent as Bookmark } from "../../images/bookmark.svg";
+import { ReactComponent as Home } from "../../images/home.svg";
+import { ReactComponent as Movies } from "../../images/movies.svg";
+import { ReactComponent as TvSeries } from "../../images/tvSeries.svg";
 export const Nav = styled.nav`
   position: fixed;
   top: 32px;
@@ -34,11 +37,27 @@ export const NavigationList = styled.ul`
   gap: 40px;
 `;
 export const NavigationItem = styled.li``;
-export const NavigationItemImage = styled.img`
+const baseIconStyles = `
   cursor: pointer;
+
   &:hover {
-    fill: var(--red);
+    path {
+      transition: fill 0.3s ease; 
+      fill: #FC4747; 
+    }
   }
+`;
+export const HomeIcon = styled(Home)`
+  ${baseIconStyles}
+`;
+export const BookmarkIcon = styled(Bookmark)`
+  ${baseIconStyles}
+`;
+export const MoviesIcon = styled(Movies)`
+  ${baseIconStyles}
+`;
+export const TvSeriesIcon = styled(TvSeries)`
+  ${baseIconStyles}
 `;
 export const NavigationUserImage = styled.img`
   cursor: pointer;
