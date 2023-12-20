@@ -20,3 +20,7 @@ code {
   font-weight: 300;
   color: #ffffff;
 }
+.main {
+  margin: 32px 0 0;
+  padding: 0 36px 0 164px;
+}

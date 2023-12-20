@@ -1,9 +1,13 @@
 import Navigation from "./components/Navigation/Navigation";
+import Search from "./components/Search/Search";
 
 function App() {
   return (
     <div className="page">
-      <Navigation />
+      <main className="main">
+        <Navigation />
+        <Search />
+      </main>
     </div>
   );
 }
