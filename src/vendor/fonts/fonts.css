@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Outfit";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("./Outfit-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Outfit";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("./Outfit-Medium.ttf") format("truetype");
+}
