@@ -3,6 +3,16 @@ import { ReactComponent as Bookmark } from "../../images/bookmark.svg";
 import { ReactComponent as Home } from "../../images/home.svg";
 import { ReactComponent as Movies } from "../../images/movies.svg";
 import { ReactComponent as TvSeries } from "../../images/tvSeries.svg";
+const baseIconStyles = `
+  cursor: pointer;
+
+  &:hover {
+    path {
+      transition: fill 0.3s ease; 
+      fill: #FC4747; 
+    }
+  }
+`;
 export const Nav = styled.nav`
   position: fixed;
   top: 32px;
@@ -36,17 +46,7 @@ export const NavigationList = styled.ul`
   flex-direction: column;
   gap: 40px;
 `;
-export const NavigationItem = styled.li``;
-const baseIconStyles = `
-  cursor: pointer;
 
-  &:hover {
-    path {
-      transition: fill 0.3s ease; 
-      fill: #FC4747; 
-    }
-  }
-`;
 export const HomeIcon = styled(Home)`
   ${baseIconStyles}
 `;

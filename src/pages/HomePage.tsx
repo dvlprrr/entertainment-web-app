@@ -1,3 +1,9 @@
+import Trending from "../components/Trending/Trending";
+
 export default function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      <Trending />
+    </div>
+  );
 }

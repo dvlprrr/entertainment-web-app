@@ -7,7 +7,6 @@ import {
   HomeIcon,
   MoviesIcon,
   Nav,
-  NavigationItem,
   NavigationList,
   NavigationLogo,
   NavigationUserImage,
@@ -20,18 +19,18 @@ export default function Navigation() {
       <WrapperNavigation>
         <NavigationLogo src={logo} />
         <NavigationList>
-          <NavigationItem>
+          <li>
             <HomeIcon />
-          </NavigationItem>
-          <NavigationItem>
+          </li>
+          <li>
             <MoviesIcon />
-          </NavigationItem>
-          <NavigationItem>
+          </li>
+          <li>
             <TvSeriesIcon />
-          </NavigationItem>
-          <NavigationItem>
+          </li>
+          <li>
             <BookmarkIcon />
-          </NavigationItem>
+          </li>
         </NavigationList>
       </WrapperNavigation>
       <div>

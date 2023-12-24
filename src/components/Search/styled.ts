@@ -2,11 +2,11 @@ import styled from "styled-components";
 export const WrapperSearch = styled.div`
   padding-top: 32px;
   display: flex;
-  align-items: center;
   gap: 24px;
 `;
 export const SearchIcon = styled.img`
   max-width: 32px;
+  align-self: flex-start;
 `;
 export const Searchinput = styled.input`
   font-size: 24px;
