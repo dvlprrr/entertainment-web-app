@@ -1,11 +1,21 @@
-import favouriteMovie from "../../images/favouriteMovie.svg";
-import { TrendingBackgroundContainer, TrendingCardWrapper } from "./styled";
+import {
+  FavouriteMovie,
+  TrendingBackgroundContainer,
+  TrendingCardWrapper,
+  TrendingPlay,
+  TrendingPlayIcon,
+  TrendingPlayText,
+} from "./styled";
 export default function TrendingCard() {
   return (
     <TrendingCardWrapper>
       <TrendingBackgroundContainer>
-        <img src={favouriteMovie} alt="fav" />
+        <FavouriteMovie />
       </TrendingBackgroundContainer>
+      <TrendingPlay>
+        <TrendingPlayIcon />
+        <TrendingPlayText>Play</TrendingPlayText>
+      </TrendingPlay>
     </TrendingCardWrapper>
   );
 }
