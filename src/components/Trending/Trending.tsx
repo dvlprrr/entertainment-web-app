@@ -1,5 +1,6 @@
 import "swiper/css";
 import "swiper/css/free-mode";
+import { FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import TrendingCard from "../TrendingCard/TrendingCard";
 import style from "./Trending.module.css";
@@ -11,9 +12,10 @@ export default function Trending() {
       <Swiper
         spaceBetween={40}
         slidesPerView={3}
-        freeMode={true}
+        freeMode
         speed={3000}
         className={style.swiperTrending}
+        modules={[FreeMode]}
       >
         <SwiperSlide className={style.swiperSlide}>
           <TrendingCard />
