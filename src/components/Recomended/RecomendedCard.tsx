@@ -8,14 +8,13 @@ import {
   RecomendedCardMovieIcon,
   RecomendedCardMovieTitle,
   RecomendedCardMovieWrapper,
-  RecomendedCardWrapper,
   RecomendedPlay,
   RecomendedPlayIcon,
   RecomendedPlayText,
 } from "./styled";
 export default function RecomendedCard() {
   return (
-    <RecomendedCardWrapper>
+    <div>
       <RecomendedCardMovieWrapper>
         <FavouriteMovieWrapper>
           <FavouriteMovie />
@@ -36,6 +35,6 @@ export default function RecomendedCard() {
         </RecomendedCardInfoDetails>
         <RecomendedCardMovieTitle>Beyond Earth</RecomendedCardMovieTitle>
       </div>
-    </RecomendedCardWrapper>
+    </div>
   );
 }

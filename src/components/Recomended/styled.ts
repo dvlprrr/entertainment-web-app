@@ -15,7 +15,7 @@ export const RecomendedList = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 `;
-export const RecomendedCardWrapper = styled.div``;
+
 export const RecomendedPlay = styled.div`
   display: flex;
   gap: 20px;
@@ -106,6 +106,7 @@ export const RecomendedCardInfoDetails = styled.div`
 `;
 export const RecomendedCardInfoText = styled.p`
   margin: 0;
+  opacity: 0.8;
 `;
 export const RecomendedCardInfoDot = styled.span`
   width: 4px;
