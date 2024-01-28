@@ -2,8 +2,21 @@ import styled from "styled-components";
 import { ReactComponent as Favourite } from "../../images/favouriteMovie.svg";
 import movie from "../../images/movieTest.png";
 import { ReactComponent as Movies } from "../../images/movies.svg";
-
-export const TrendingPlay = styled.div`
+export const RecomendedWrapper = styled.div`
+  width: 100%;
+`;
+export const RecomendedTitle = styled.h2`
+  margin: 0 0 32px;
+  font-size: 32px;
+  font-weight: 300;
+`;
+export const RecomendedList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+`;
+export const RecomendedCardWrapper = styled.div``;
+export const RecomendedPlay = styled.div`
   display: flex;
   gap: 20px;
   background-color: rgba(151, 151, 151, 0.4);
@@ -11,27 +24,27 @@ export const TrendingPlay = styled.div`
   height: fit-content;
   width: 100px;
   padding: 9px;
-  margin: 35px auto 15px;
+  margin: 20px auto 15px;
+  align-self: center;
+  justify-self: center;
   align-items: center;
   transition: opacity 0.3s ease;
   opacity: 0;
   z-index: 2;
 `;
-
-export const TrendingCardWrapper = styled.div`
+export const RecomendedCardMovieWrapper = styled.div`
   position: relative;
   cursor: pointer;
   border-radius: 8px;
-  width: 470px;
-  height: 230px;
+  width: 100%;
+  height: 210px;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${movie});
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: 16px;
   box-sizing: border-box;
-
   &:hover::before {
     content: "";
     position: absolute;
@@ -44,31 +57,16 @@ export const TrendingCardWrapper = styled.div`
   }
 
   &:hover {
-    ${TrendingPlay} {
+    ${RecomendedPlay} {
       opacity: 1;
       transition: opacity 1s;
     }
   }
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.75) 100%
-    );
-  }
 `;
-
 export const FavouriteMovie = styled(Favourite)`
   cursor: pointer;
 `;
-
-export const TrendingBackgroundContainer = styled.div`
+export const FavouriteMovieWrapper = styled.div`
   align-self: flex-end;
   border-radius: 32px;
   background-color: #161d2f;
@@ -90,40 +88,33 @@ export const TrendingBackgroundContainer = styled.div`
   }
 `;
 
-export const TrendingPlayIcon = styled.img`
+export const RecomendedPlayIcon = styled.img`
   width: 30px;
   height: 30px;
 `;
-export const TrendingPlayText = styled.p`
+export const RecomendedPlayText = styled.p`
   margin: 0;
   font-size: 18px;
   font-weight: 400;
 `;
-export const TrendingInfoWrapper = styled.div`
-  z-index: 2;
-`;
-export const TrendingInfoDetails = styled.div`
-  color: #fff;
-  opacity: 0.8;
-  font-feature-settings: "clig" off, "liga" off;
+export const RecomendedCardInfoDetails = styled.div`
   display: flex;
-  align-items: center;
+  margin-top: 8px;
   gap: 8px;
+  align-items: center;
+  font-size: 13px;
 `;
-export const TrendingInfoText = styled.p`
+export const RecomendedCardInfoText = styled.p`
   margin: 0;
-  font-size: 15px;
-  font-weight: 200;
-  line-height: normal;
 `;
-export const TrendingInfoDot = styled.span`
+export const RecomendedCardInfoDot = styled.span`
   width: 4px;
   height: 4px;
   background-color: #fff;
   border-radius: 50%;
   opacity: 0.5;
 `;
-export const TrendingMovieIcon = styled(Movies)`
+export const RecomendedCardMovieIcon = styled(Movies)`
   width: 12px;
   height: 12px;
   path {
@@ -131,8 +122,8 @@ export const TrendingMovieIcon = styled(Movies)`
     opacity: 0.8;
   }
 `;
-export const TrendingMovieTitle = styled.p`
-  margin: 0;
+export const RecomendedCardMovieTitle = styled.p`
+  margin: 5px 0 0 0;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 18px;
 `;

@@ -1,9 +1,12 @@
+import Recomended from "../components/Recomended/Recomended";
 import Trending from "../components/Trending/Trending";
+import { HomePageWrapper } from "./styled";
 
 export default function HomePage() {
   return (
-    <div>
+    <HomePageWrapper>
       <Trending />
-    </div>
+      <Recomended />
+    </HomePageWrapper>
   );
 }
