@@ -18,7 +18,9 @@ export const Searchinput = styled.input`
   padding-bottom: 15px;
   width: 100%;
   caret-color: #fc4747;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
   &:focus {
-    border-bottom: 1px solid #5a698f;
+    box-shadow: 0 1px 0 0 #5a698f;
   }
 `;

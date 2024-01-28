@@ -12,3 +12,10 @@
   font-display: swap;
   src: url("./Outfit-Medium.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Outfit";
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  src: url("./Outfit-ExtraLight.ttf") format("truetype");
+}
