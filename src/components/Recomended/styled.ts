@@ -24,7 +24,7 @@ export const RecomendedPlay = styled.div`
   height: fit-content;
   width: 100px;
   padding: 9px;
-  margin: 20px auto 15px;
+  margin: 35px auto 15px;
   align-self: center;
   justify-self: center;
   align-items: center;
