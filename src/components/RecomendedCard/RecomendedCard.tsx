@@ -12,7 +12,8 @@ import {
   RecomendedPlayIcon,
   RecomendedPlayText,
 } from "./styled";
-export default function RecomendedCard() {
+
+export function RecomendedCard() {
   return (
     <div>
       <RecomendedCardMovieWrapper>

@@ -49,6 +49,7 @@ export const TrendingCardWrapper = styled.div`
       transition: opacity 1s;
     }
   }
+
   &::after {
     content: "";
     position: absolute;
@@ -61,6 +62,12 @@ export const TrendingCardWrapper = styled.div`
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0.75) 100%
     );
+  }
+
+  @media (max-width: 426px) {
+    width: 250px;
+    height: 140px;
+    padding: 16px;
   }
 `;
 
@@ -78,9 +85,11 @@ export const TrendingBackgroundContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
   &:hover {
     transition: 0.3s ease;
     background-color: #ffffff;
+
     ${FavouriteMovie} {
       path {
         transition: 0.3s ease;
@@ -94,14 +103,17 @@ export const TrendingPlayIcon = styled.img`
   width: 30px;
   height: 30px;
 `;
+
 export const TrendingPlayText = styled.p`
   margin: 0;
   font-size: 18px;
   font-weight: 400;
 `;
+
 export const TrendingInfoWrapper = styled.div`
   z-index: 2;
 `;
+
 export const TrendingInfoDetails = styled.div`
   color: #fff;
   opacity: 0.8;
@@ -110,12 +122,18 @@ export const TrendingInfoDetails = styled.div`
   align-items: center;
   gap: 8px;
 `;
+
 export const TrendingInfoText = styled.p`
   margin: 0;
   font-size: 15px;
   font-weight: 200;
   line-height: normal;
+
+  @media (max-width: 426px) {
+    font-size: 12px;
+  }
 `;
+
 export const TrendingInfoDot = styled.span`
   width: 4px;
   height: 4px;
@@ -123,6 +141,7 @@ export const TrendingInfoDot = styled.span`
   border-radius: 50%;
   opacity: 0.5;
 `;
+
 export const TrendingMovieIcon = styled(Movies)`
   width: 12px;
   height: 12px;
@@ -131,8 +150,13 @@ export const TrendingMovieIcon = styled(Movies)`
     opacity: 0.8;
   }
 `;
+
 export const TrendingMovieTitle = styled.p`
   margin: 0;
   font-weight: 300;
   font-size: 24px;
+
+  @media (max-width: 426px) {
+    font-size: 15px;
+  }
 `;

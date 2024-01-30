@@ -1,11 +1,15 @@
-import RecomendedCard from "./RecomendedCard";
-import { RecomendedList, RecomendedTitle, RecomendedWrapper } from "./styled";
+import { RecomendedCard } from "../RecomendedCard/RecomendedCard";
+import {
+  RecomendedListWrapper,
+  RecomendedTitle,
+  RecomendedWrapper,
+} from "./styled";
 
-export default function Recomended() {
+export function RecomendedList() {
   return (
     <RecomendedWrapper>
       <RecomendedTitle>Recommended for you</RecomendedTitle>
-      <RecomendedList>
+      <RecomendedListWrapper>
         <RecomendedCard />
         <RecomendedCard />
         <RecomendedCard />
@@ -14,7 +18,7 @@ export default function Recomended() {
         <RecomendedCard />
         <RecomendedCard />
         <RecomendedCard />
-      </RecomendedList>
+      </RecomendedListWrapper>
     </RecomendedWrapper>
   );
 }
