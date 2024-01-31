@@ -24,3 +24,8 @@ code {
   margin: 32px 0 0;
   padding: 0 36px 0 164px;
 }
+@media (max-width: 768px) {
+  .main {
+    padding: 0 25px 0 25px;
+  }
+}

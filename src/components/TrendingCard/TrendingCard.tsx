@@ -13,7 +13,7 @@ import {
   TrendingPlayIcon,
   TrendingPlayText,
 } from "./styled";
-export default function TrendingCard() {
+export function TrendingCard() {
   return (
     <TrendingCardWrapper>
       <TrendingBackgroundContainer>

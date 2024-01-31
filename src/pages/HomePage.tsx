@@ -1,12 +1,12 @@
-import Recomended from "../components/Recomended/Recomended";
-import Trending from "../components/Trending/Trending";
+import { RecomendedList } from "../components/RecomendedList/RecomendedList";
+import { TrendingList } from "../components/TrendingList/TrendingList";
 import { HomePageWrapper } from "./styled";
 
-export default function HomePage() {
+export function HomePage() {
   return (
     <HomePageWrapper>
-      <Trending />
-      <Recomended />
+      <TrendingList />
+      <RecomendedList />
     </HomePageWrapper>
   );
 }

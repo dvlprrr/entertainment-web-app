@@ -1,0 +1,20 @@
+.swiperSlide {
+  width: 470px !important;
+}
+
+.swiperTrending {
+  width: 2510px;
+  margin: 0;
+}
+
+@media (max-width: 426px) {
+  .swiperSlide {
+    width: 250px !important;
+  }
+}
+
+@media (max-width: 426px) {
+  .swiperTrending {
+    width: 1305px;
+  }
+}
