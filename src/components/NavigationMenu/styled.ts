@@ -95,6 +95,10 @@ export const NavigationList = styled.ul`
 
 export const NavigationItem = styled.li`
   height: 20px;
+
+  @media (max-width: 426px) {
+    height: 16px;
+  }
 `;
 
 export const HomeIcon = styled(Home)`
