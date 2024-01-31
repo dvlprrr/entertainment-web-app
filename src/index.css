@@ -10,10 +10,6 @@ body {
   background-color: #10141e;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 .page {
   max-width: 1920px;
   font-family: "Outfit", sans-serif;
@@ -28,4 +24,12 @@ code {
   .main {
     padding: 0 25px 0 25px;
   }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fc4747;
+  border-radius: 5px;
 }

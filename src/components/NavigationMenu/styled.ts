@@ -44,7 +44,6 @@ export const Nav = styled.nav`
     padding: 18px 24px;
   }
   @media (max-width: 426px) {
-    /* position: absolute; */
     width: 100%;
     top: 0;
     left: 0;
