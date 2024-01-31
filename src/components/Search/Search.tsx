@@ -1,5 +1,6 @@
 import search from "../../images/search.svg";
 import { SearchIcon, Searchinput, WrapperSearch } from "./styled";
+
 export function Search() {
   return (
     <WrapperSearch>

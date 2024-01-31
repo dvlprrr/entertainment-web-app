@@ -9,6 +9,7 @@ import {
   NavigationLogo,
   TvSeriesIcon,
 } from "./styled";
+
 export function NavigationMenuMobile() {
   return (
     <>

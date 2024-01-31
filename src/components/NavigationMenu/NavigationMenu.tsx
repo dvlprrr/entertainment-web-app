@@ -4,6 +4,7 @@ import defalutAvatar from "../../images/defalutAvatar.svg";
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop";
 import { NavigationMenuMobile } from "./NavigationMenuMobile";
 import { Nav, NavigationImageWrapper, NavigationUserImage } from "./styled";
+
 export function NavigationMenu() {
   const isWidth768 = useMediaQuery({ query: "(max-width: 768px)" });
   return (

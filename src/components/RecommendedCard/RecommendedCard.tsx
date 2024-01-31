@@ -16,14 +16,13 @@ import {
 
 type RecomendedCardProps = Omit<Recommended, "id">;
 
-export function RecomendedCard({
+export function RecommendedCard({
   title,
   url,
   year,
   category,
   rating,
   isBookmarked,
-  isTrending,
 }: RecomendedCardProps) {
   const isWidth768 = useMediaQuery({ query: "(max-width: 768px)" });
   return (
@@ -40,10 +39,10 @@ export function RecomendedCard({
       <div>
         <RecomendedCardInfoDetails>
           <RecomendedCardInfoText>{year}</RecomendedCardInfoText>
-          <RecomendedCardInfoDot></RecomendedCardInfoDot>
+          <RecomendedCardInfoDot />
           <RecomendedCardMovieIcon />
           <RecomendedCardInfoText>{category}</RecomendedCardInfoText>
-          <RecomendedCardInfoDot></RecomendedCardInfoDot>
+          <RecomendedCardInfoDot />
           <RecomendedCardInfoText>{rating}</RecomendedCardInfoText>
         </RecomendedCardInfoDetails>
         <RecomendedCardMovieTitle>{title}</RecomendedCardMovieTitle>

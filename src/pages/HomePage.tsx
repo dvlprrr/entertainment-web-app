@@ -1,4 +1,4 @@
-import { RecommendedList } from "../components/RecomendedList/RecomendedList";
+import { RecommendedList } from "../components/RecommendedList/RecommendedList";
 import { TrendingList } from "../components/TrendingList/TrendingList";
 import movie from "../images/movieTest.png";
 import { HomePageWrapper } from "./styled";
@@ -20,8 +20,8 @@ export function HomePage() {
     <HomePageWrapper>
       <TrendingList arrayTrending={arrayMovies} />
       <RecommendedList
-        recommendedTitle={"Recommended for you"}
-        arrayTrending={arrayMovies}
+        recommendedTitle="Recommended for you"
+        arrayMovies={arrayMovies}
       />
     </HomePageWrapper>
   );

@@ -136,7 +136,9 @@ export const TrendingInfoWrapper = styled.div`
 export const TrendingInfoDetails = styled.div`
   color: #fff;
   opacity: 0.8;
-  font-feature-settings: "clig" off, "liga" off;
+  font-feature-settings:
+    "clig" off,
+    "liga" off;
   display: flex;
   align-items: center;
   gap: 8px;

@@ -23,7 +23,6 @@ export function TrendingCard({
   category,
   rating,
   isBookmarked,
-  isTrending,
 }: RecomendedCardProps) {
   return (
     <TrendingCardWrapper url={url}>
@@ -35,10 +34,10 @@ export function TrendingCard({
       <TrendingInfoWrapper>
         <TrendingInfoDetails>
           <TrendingInfoText>{year}</TrendingInfoText>
-          <TrendingInfoDot></TrendingInfoDot>
+          <TrendingInfoDot />
           <TrendingMovieIcon />
           <TrendingInfoText>{category}</TrendingInfoText>
-          <TrendingInfoDot></TrendingInfoDot>
+          <TrendingInfoDot />
           <TrendingInfoText>{rating}</TrendingInfoText>
         </TrendingInfoDetails>
         <TrendingMovieTitle>{title}</TrendingMovieTitle>

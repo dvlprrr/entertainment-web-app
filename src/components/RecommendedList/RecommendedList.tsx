@@ -1,5 +1,5 @@
 import { Recommended } from "../../types/Recommended";
-import { RecomendedCard } from "../RecomendedCard/RecomendedCard";
+import { RecommendedCard } from "../RecommendedCard/RecommendedCard";
 import {
   RecomendedListWrapper,
   RecomendedTitle,
@@ -8,22 +8,22 @@ import {
 
 interface RecomendedListT {
   recommendedTitle: string;
-  arrayTrending: Recommended[];
+  arrayMovies: Recommended[];
 }
 
 export function RecommendedList({
   recommendedTitle,
-  arrayTrending,
+  arrayMovies,
 }: RecomendedListT) {
   const numberOfCards = 8;
 
   const duplicatedData = Array.from({ length: numberOfCards }, (_, index) => {
-    const dataIndex = index % (arrayTrending?.length || 0);
-    return arrayTrending?.[dataIndex];
+    const dataIndex = index % (arrayMovies?.length || 0);
+    return arrayMovies?.[dataIndex];
   });
 
   const cards = duplicatedData.map((item, index) => (
-    <RecomendedCard
+    <RecommendedCard
       key={index}
       title={item?.title}
       url={item?.url}
