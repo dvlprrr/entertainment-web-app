@@ -29,9 +29,11 @@ export function NavigationMenuMobile() {
             <TvSeriesIcon />
           </NavigationItem>
         </Link>
-        <NavigationItem>
-          <BookmarkIcon />
-        </NavigationItem>
+        <Link to="/favourite">
+          <NavigationItem>
+            <BookmarkIcon />
+          </NavigationItem>
+        </Link>
       </NavigationList>
     </>
   );

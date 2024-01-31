@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import { NavigationMenu } from "./components/NavigationMenu/NavigationMenu";
 import { Search } from "./components/Search/Search";
+import { FavouritePage } from "./pages/FavouritePage";
 import { HomePage } from "./pages/HomePage";
 import { MoviesPage } from "./pages/MoviesPage";
-import { TvSeriesPage } from "./pages/TvSeriesPage";
+import { TVSeriesPage } from "./pages/TVSeriesPage";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/tv-series" element={<TvSeriesPage />} />
+          <Route path="/tv-series" element={<TVSeriesPage />} />
+          <Route path="/favourite" element={<FavouritePage />} />
         </Routes>
       </main>
     </div>
