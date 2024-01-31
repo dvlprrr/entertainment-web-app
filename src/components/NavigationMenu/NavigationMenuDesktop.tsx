@@ -26,9 +26,11 @@ export function NavigationMenuDesktop() {
             <MoviesIcon />
           </NavigationItem>
         </Link>
-        <NavigationItem>
-          <TvSeriesIcon />
-        </NavigationItem>
+        <Link to="/tv-series">
+          <NavigationItem>
+            <TvSeriesIcon />
+          </NavigationItem>
+        </Link>
         <NavigationItem>
           <BookmarkIcon />
         </NavigationItem>

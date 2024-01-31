@@ -12,3 +12,10 @@ export const MoviesPageWrapper = styled.div`
     margin-top: 10px;
   }
 `;
+
+export const TVSeriesPageWrapper = styled.div`
+  margin-top: 20px;
+  @media (max-width: 426px) {
+    margin-top: 10px;
+  }
+`;
