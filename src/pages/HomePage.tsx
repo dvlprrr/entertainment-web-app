@@ -1,12 +1,28 @@
 import { RecommendedList } from "../components/RecomendedList/RecomendedList";
 import { TrendingList } from "../components/TrendingList/TrendingList";
+import movie from "../images/movieTest.png";
 import { HomePageWrapper } from "./styled";
 
 export function HomePage() {
+  const arrayMovies = [
+    {
+      id: 1,
+      title: "Beyond Earth",
+      url: movie,
+      year: 2019,
+      category: "Movie",
+      rating: "PG",
+      isBookmarked: true,
+      isTrending: true,
+    },
+  ];
   return (
     <HomePageWrapper>
-      <TrendingList />
-      <RecommendedList recommendedTitle={"Recommended for you"} />
+      <TrendingList arrayTrending={arrayMovies} />
+      <RecommendedList
+        recommendedTitle={"Recommended for you"}
+        arrayTrending={arrayMovies}
+      />
     </HomePageWrapper>
   );
 }

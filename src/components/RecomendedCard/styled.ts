@@ -1,33 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as Favourite } from "../../images/favouriteMovie.svg";
-import movie from "../../images/movieTest.png";
+
 import { ReactComponent as Movies } from "../../images/movies.svg";
-
-export const FavouriteMovie = styled(Favourite)`
-  cursor: pointer;
-`;
-
-export const FavouriteMovieWrapper = styled.div`
-  align-self: flex-end;
-  border-radius: 32px;
-  background-color: #161d2f;
-  opacity: 0.5;
-  padding: 9px 10px;
-  background-size: 32px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &:hover {
-    transition: 0.3s ease;
-    background-color: #ffffff;
-    ${FavouriteMovie} {
-      path {
-        transition: 0.3s ease;
-        stroke: #161d2f;
-      }
-    }
-  }
-`;
 
 export const RecomendedCardInfoDetails = styled.div`
   display: flex;
@@ -120,7 +93,7 @@ export const RecomendedPlayText = styled.p`
   font-weight: 400;
 `;
 
-export const RecomendedCardMovieWrapper = styled.div`
+export const RecomendedCardMovieWrapper = styled.div<{ url: string }>`
   position: relative;
   cursor: pointer;
   border-radius: 8px;
@@ -128,7 +101,7 @@ export const RecomendedCardMovieWrapper = styled.div`
   height: 210px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(${movie});
+  background-image: url(${({ url }) => url});
   display: flex;
   flex-direction: column;
   padding: 8px;
