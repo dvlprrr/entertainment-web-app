@@ -27,7 +27,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint", "react", "prettier"], // Добавьте "prettier" сюда
+  plugins: ["@typescript-eslint", "react"],
   rules: {
     quotes: ["error", "double"],
     "import/no-extraneous-dependencies": "off",
