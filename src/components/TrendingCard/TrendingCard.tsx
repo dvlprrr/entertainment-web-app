@@ -1,7 +1,7 @@
 import playIcon from "../../images/playIcon.svg";
+import { Recommended } from "../../types/Recommended";
+import { FavouriteMovieIcon } from "../FavouriteMovieIcon/FavouriteMovieIcon";
 import {
-  FavouriteMovie,
-  TrendingBackgroundContainer,
   TrendingCardWrapper,
   TrendingInfoDetails,
   TrendingInfoDot,
@@ -13,26 +13,35 @@ import {
   TrendingPlayIcon,
   TrendingPlayText,
 } from "./styled";
-export function TrendingCard() {
+
+type RecomendedCardProps = Omit<Recommended, "id">;
+
+export function TrendingCard({
+  title,
+  url,
+  year,
+  category,
+  rating,
+  isBookmarked,
+  isTrending,
+}: RecomendedCardProps) {
   return (
-    <TrendingCardWrapper>
-      <TrendingBackgroundContainer>
-        <FavouriteMovie />
-      </TrendingBackgroundContainer>
+    <TrendingCardWrapper url={url}>
+      <FavouriteMovieIcon isBookmarked={isBookmarked} />
       <TrendingPlay>
         <TrendingPlayIcon src={playIcon} alt="play" />
         <TrendingPlayText>Play</TrendingPlayText>
       </TrendingPlay>
       <TrendingInfoWrapper>
         <TrendingInfoDetails>
-          <TrendingInfoText>2019</TrendingInfoText>
+          <TrendingInfoText>{year}</TrendingInfoText>
           <TrendingInfoDot></TrendingInfoDot>
           <TrendingMovieIcon />
-          <TrendingInfoText>Movie</TrendingInfoText>
+          <TrendingInfoText>{category}</TrendingInfoText>
           <TrendingInfoDot></TrendingInfoDot>
-          <TrendingInfoText>PG</TrendingInfoText>
+          <TrendingInfoText>{rating}</TrendingInfoText>
         </TrendingInfoDetails>
-        <TrendingMovieTitle>Beyond Earth</TrendingMovieTitle>
+        <TrendingMovieTitle>{title}</TrendingMovieTitle>
       </TrendingInfoWrapper>
     </TrendingCardWrapper>
   );

@@ -1,8 +1,8 @@
 import { useMediaQuery } from "react-responsive";
 import playIcon from "../../images/playIcon.svg";
+import { Recommended } from "../../types/Recommended";
+import { FavouriteMovieIcon } from "../FavouriteMovieIcon/FavouriteMovieIcon";
 import {
-  FavouriteMovie,
-  FavouriteMovieWrapper,
   RecomendedCardInfoDetails,
   RecomendedCardInfoDot,
   RecomendedCardInfoText,
@@ -14,14 +14,22 @@ import {
   RecomendedPlayText,
 } from "./styled";
 
-export function RecomendedCard() {
+type RecomendedCardProps = Omit<Recommended, "id">;
+
+export function RecomendedCard({
+  title,
+  url,
+  year,
+  category,
+  rating,
+  isBookmarked,
+  isTrending,
+}: RecomendedCardProps) {
   const isWidth768 = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <div>
-      <RecomendedCardMovieWrapper>
-        <FavouriteMovieWrapper>
-          <FavouriteMovie />
-        </FavouriteMovieWrapper>
+      <RecomendedCardMovieWrapper url={url}>
+        <FavouriteMovieIcon isBookmarked={isBookmarked} />
         {!isWidth768 && (
           <RecomendedPlay>
             <RecomendedPlayIcon src={playIcon} alt="play" />
@@ -31,14 +39,14 @@ export function RecomendedCard() {
       </RecomendedCardMovieWrapper>
       <div>
         <RecomendedCardInfoDetails>
-          <RecomendedCardInfoText>2019</RecomendedCardInfoText>
+          <RecomendedCardInfoText>{year}</RecomendedCardInfoText>
           <RecomendedCardInfoDot></RecomendedCardInfoDot>
           <RecomendedCardMovieIcon />
-          <RecomendedCardInfoText>Movie</RecomendedCardInfoText>
+          <RecomendedCardInfoText>{category}</RecomendedCardInfoText>
           <RecomendedCardInfoDot></RecomendedCardInfoDot>
-          <RecomendedCardInfoText>PG</RecomendedCardInfoText>
+          <RecomendedCardInfoText>{rating}</RecomendedCardInfoText>
         </RecomendedCardInfoDetails>
-        <RecomendedCardMovieTitle>Beyond Earth</RecomendedCardMovieTitle>
+        <RecomendedCardMovieTitle>{title}</RecomendedCardMovieTitle>
       </div>
     </div>
   );

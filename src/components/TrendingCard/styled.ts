@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { ReactComponent as Favourite } from "../../images/favouriteMovie.svg";
-import movie from "../../images/movieTest.png";
 import { ReactComponent as Movies } from "../../images/movies.svg";
 
 export const TrendingPlay = styled.div`
@@ -21,7 +20,7 @@ export const TrendingPlay = styled.div`
   z-index: 2;
 `;
 
-export const TrendingCardWrapper = styled.div`
+export const TrendingCardWrapper = styled.div<{ url: string }>`
   position: relative;
   cursor: pointer;
   border-radius: 8px;
@@ -29,7 +28,7 @@ export const TrendingCardWrapper = styled.div`
   height: 230px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(${movie});
+  background-image: url(${({ url }) => url});
   display: flex;
   flex-direction: column;
   justify-content: space-between;
