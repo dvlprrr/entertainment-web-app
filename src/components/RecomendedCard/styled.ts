@@ -87,13 +87,16 @@ export const RecomendedCardMovieTitle = styled.p`
 
 export const RecomendedPlay = styled.div`
   display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   gap: 20px;
   background-color: rgba(151, 151, 151, 0.4);
   border-radius: 25px;
   height: fit-content;
   width: 100px;
   padding: 9px;
-  margin: 35px auto 15px;
   align-self: center;
   justify-self: center;
   align-items: center;
@@ -128,8 +131,9 @@ export const RecomendedCardMovieWrapper = styled.div`
   background-image: url(${movie});
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 8px;
   box-sizing: border-box;
+
   &:hover::before {
     content: "";
     position: absolute;
@@ -147,9 +151,23 @@ export const RecomendedCardMovieWrapper = styled.div`
       transition: opacity 1s;
     }
   }
+
   @media (max-width: 1200px) {
     height: 140px;
   }
+
+  @media (max-width: 768px) {
+    &:hover::before {
+      background-color: transparent;
+    }
+
+    &:hover {
+      ${RecomendedPlay} {
+        opacity: 0;
+      }
+    }
+  }
+
   @media (max-width: 475px) {
     height: 110px;
   }

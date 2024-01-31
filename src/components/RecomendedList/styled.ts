@@ -27,4 +27,8 @@ export const RecomendedListWrapper = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  @media (max-width: 426px) {
+    gap: 15px;
+  }
 `;

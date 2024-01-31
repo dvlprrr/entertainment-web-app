@@ -7,6 +7,7 @@ export const WrapperSearch = styled.div`
 
   @media (max-width: 426px) {
     padding-top: 24px;
+    gap: 16px;
   }
 `;
 

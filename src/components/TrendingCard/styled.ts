@@ -5,13 +5,16 @@ import { ReactComponent as Movies } from "../../images/movies.svg";
 
 export const TrendingPlay = styled.div`
   display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   gap: 20px;
   background-color: rgba(151, 151, 151, 0.4);
   border-radius: 25px;
   height: fit-content;
   width: 100px;
   padding: 9px;
-  margin: 35px auto 15px;
   align-items: center;
   transition: opacity 0.3s ease;
   opacity: 0;
@@ -29,6 +32,7 @@ export const TrendingCardWrapper = styled.div`
   background-image: url(${movie});
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 24px;
   box-sizing: border-box;
 
@@ -41,6 +45,7 @@ export const TrendingCardWrapper = styled.div`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease;
+    border-radius: 0 0 8px 8px;
   }
 
   &:hover {
@@ -62,12 +67,25 @@ export const TrendingCardWrapper = styled.div`
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0.75) 100%
     );
+    border-radius: 0 0 8px 8px;
+  }
+
+  @media (max-width: 768px) {
+    &:hover::before {
+      background-color: transparent;
+    }
+
+    &:hover {
+      ${TrendingPlay} {
+        opacity: 0;
+      }
+    }
   }
 
   @media (max-width: 426px) {
     width: 250px;
     height: 140px;
-    padding: 16px;
+    padding: 8px;
   }
 `;
 
@@ -112,6 +130,8 @@ export const TrendingPlayText = styled.p`
 
 export const TrendingInfoWrapper = styled.div`
   z-index: 2;
+  border-radius: 8px;
+  padding: 8px;
 `;
 
 export const TrendingInfoDetails = styled.div`
