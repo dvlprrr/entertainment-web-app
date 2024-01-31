@@ -5,10 +5,14 @@ import {
   RecomendedWrapper,
 } from "./styled";
 
-export function RecomendedList() {
+interface RecomendedListT {
+  recommendedTitle: string;
+}
+
+export function RecommendedList({ recommendedTitle }: RecomendedListT) {
   return (
     <RecomendedWrapper>
-      <RecomendedTitle>Recommended for you</RecomendedTitle>
+      <RecomendedTitle>{recommendedTitle}</RecomendedTitle>
       <RecomendedListWrapper>
         <RecomendedCard />
         <RecomendedCard />

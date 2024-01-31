@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import {
   BookmarkIcon,
@@ -15,12 +16,16 @@ export function NavigationMenuDesktop() {
     <WrapperNavigation>
       <NavigationLogo src={logo} />
       <NavigationList>
-        <NavigationItem>
-          <HomeIcon />
-        </NavigationItem>
-        <NavigationItem>
-          <MoviesIcon />
-        </NavigationItem>
+        <Link to="/">
+          <NavigationItem>
+            <HomeIcon />
+          </NavigationItem>
+        </Link>
+        <Link to="/movies">
+          <NavigationItem>
+            <MoviesIcon />
+          </NavigationItem>
+        </Link>
         <NavigationItem>
           <TvSeriesIcon />
         </NavigationItem>

@@ -5,12 +5,12 @@ export const RecomendedWrapper = styled.section`
 `;
 
 export const RecomendedTitle = styled.h2`
-  margin: 0 0 32px;
+  margin: 0 0 35px;
   font-size: 32px;
   font-weight: 300;
 
-  @media (max-width: 426px) {
-    margin-bottom: 24px;
+  @media (max-width: 768px) {
+    margin-bottom: 25px;
     font-size: 20px;
   }
 `;

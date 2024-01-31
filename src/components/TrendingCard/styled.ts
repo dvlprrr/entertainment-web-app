@@ -33,7 +33,7 @@ export const TrendingCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 24px;
+  padding: 16px;
   box-sizing: border-box;
 
   &:hover::before {
