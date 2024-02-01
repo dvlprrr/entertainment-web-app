@@ -9,6 +9,6 @@ export default defineConfig({
     startUrl: true,
   },
   server: {
-    port: 3000,
+    port: 3001,
   },
 })
