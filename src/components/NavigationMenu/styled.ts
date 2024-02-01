@@ -1,13 +1,18 @@
-import styled from "styled-components";
-import { ReactComponent as Bookmark } from "../../images/bookmark.svg";
-import { ReactComponent as Home } from "../../images/home.svg";
-import { ReactComponent as Movies } from "../../images/movies.svg";
-import { ReactComponent as TvSeries } from "../../images/tvSeries.svg";
+import styled from "styled-components"
+import { ReactComponent as Bookmark } from "../../images/bookmark.svg"
+import { ReactComponent as Home } from "../../images/home.svg"
+import { ReactComponent as Movies } from "../../images/movies.svg"
+import { ReactComponent as TvSeries } from "../../images/tvSeries.svg"
 
 const baseIconStyles = `
   cursor: pointer;
   height: 20px;
   width: fit-content;
+
+  path {
+    transition: fill 0.3s ease;
+    fill: currentColor;
+  }
 
   &:hover {
     path {
@@ -18,7 +23,7 @@ const baseIconStyles = `
   @media (max-width: 426px) {
     height: 16px;
   }
-`;
+`
 
 export const Nav = styled.nav`
   position: fixed;
@@ -51,7 +56,7 @@ export const Nav = styled.nav`
     z-index: 3;
     height: 50px;
   }
-`;
+`
 
 export const WrapperNavigation = styled.div`
   display: flex;
@@ -65,7 +70,7 @@ export const WrapperNavigation = styled.div`
     width: 65%;
     gap: 0;
   }
-`;
+`
 
 export const NavigationLogo = styled.img`
   width: 32px;
@@ -74,7 +79,7 @@ export const NavigationLogo = styled.img`
   @media (max-width: 426px) {
     width: 25px;
   }
-`;
+`
 
 export const NavigationList = styled.ul`
   list-style-type: none;
@@ -91,7 +96,7 @@ export const NavigationList = styled.ul`
   @media (max-width: 426px) {
     gap: 24px;
   }
-`;
+`
 
 export const NavigationItem = styled.li`
   height: 20px;
@@ -99,28 +104,28 @@ export const NavigationItem = styled.li`
   @media (max-width: 426px) {
     height: 16px;
   }
-`;
+`
 
 export const HomeIcon = styled(Home)`
-  ${baseIconStyles}
-`;
+  ${baseIconStyles};
+`
 
 export const BookmarkIcon = styled(Bookmark)`
   ${baseIconStyles}
-`;
+`
 
 export const MoviesIcon = styled(Movies)`
   ${baseIconStyles}
-`;
+`
 
 export const TvSeriesIcon = styled(TvSeries)`
   ${baseIconStyles}
-`;
+`
 
 export const NavigationUserImage = styled.img`
   cursor: pointer;
   width: 100%;
-`;
+`
 
 export const NavigationImageWrapper = styled.div`
   align-self: center;
@@ -136,4 +141,4 @@ export const NavigationImageWrapper = styled.div`
     width: 24px;
     height: 24px;
   }
-`;
+`

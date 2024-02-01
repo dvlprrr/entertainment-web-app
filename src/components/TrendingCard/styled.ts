@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { ReactComponent as Favourite } from "../../images/favouriteMovie.svg";
-import { ReactComponent as Movies } from "../../images/movies.svg";
+import styled from "styled-components"
+import { ReactComponent as Favourite } from "../../images/favouriteMovie.svg"
+import { ReactComponent as Movies } from "../../images/movies.svg"
 
 export const TrendingPlay = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ export const TrendingPlay = styled.div`
   transition: opacity 0.3s ease;
   opacity: 0;
   z-index: 2;
-`;
+`
 
 export const TrendingCardWrapper = styled.div<{ url: string }>`
   position: relative;
@@ -86,11 +86,11 @@ export const TrendingCardWrapper = styled.div<{ url: string }>`
     height: 140px;
     padding: 8px;
   }
-`;
+`
 
 export const FavouriteMovie = styled(Favourite)`
   cursor: pointer;
-`;
+`
 
 export const TrendingBackgroundContainer = styled.div`
   align-self: flex-end;
@@ -114,24 +114,24 @@ export const TrendingBackgroundContainer = styled.div`
       }
     }
   }
-`;
+`
 
 export const TrendingPlayIcon = styled.img`
   width: 30px;
   height: 30px;
-`;
+`
 
 export const TrendingPlayText = styled.p`
   margin: 0;
   font-size: 18px;
   font-weight: 400;
-`;
+`
 
 export const TrendingInfoWrapper = styled.div`
   z-index: 2;
   border-radius: 8px;
   padding: 8px;
-`;
+`
 
 export const TrendingInfoDetails = styled.div`
   color: #fff;
@@ -142,7 +142,7 @@ export const TrendingInfoDetails = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-`;
+`
 
 export const TrendingInfoText = styled.p`
   margin: 0;
@@ -153,7 +153,7 @@ export const TrendingInfoText = styled.p`
   @media (max-width: 426px) {
     font-size: 12px;
   }
-`;
+`
 
 export const TrendingInfoDot = styled.span`
   width: 4px;
@@ -161,7 +161,7 @@ export const TrendingInfoDot = styled.span`
   background-color: #fff;
   border-radius: 50%;
   opacity: 0.5;
-`;
+`
 
 export const TrendingMovieIcon = styled(Movies)`
   width: 12px;
@@ -170,7 +170,7 @@ export const TrendingMovieIcon = styled(Movies)`
     fill: #fff;
     opacity: 0.8;
   }
-`;
+`
 
 export const TrendingMovieTitle = styled.p`
   margin: 0;
@@ -180,4 +180,4 @@ export const TrendingMovieTitle = styled.p`
   @media (max-width: 426px) {
     font-size: 15px;
   }
-`;
+`

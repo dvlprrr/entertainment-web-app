@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { ReactComponent as Favourite } from "../../images/favouriteMovie.svg";
+import styled from "styled-components"
+import { ReactComponent as Favourite } from "../../images/favouriteMovie.svg"
 
 export const FavouriteMovie = styled(Favourite)`
   cursor: pointer;
-`;
+`
 
 export const FavouriteMovieWrapper = styled.div<{ isBookmarked: boolean }>`
   align-self: flex-end;
@@ -43,4 +43,4 @@ export const FavouriteMovieWrapper = styled.div<{ isBookmarked: boolean }>`
           }
         }
       } `}
-`;
+`

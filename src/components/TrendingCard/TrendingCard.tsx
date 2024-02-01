@@ -1,6 +1,6 @@
-import playIcon from "../../images/playIcon.svg";
-import { Recommended } from "../../types/Recommended";
-import { FavouriteMovieIcon } from "../FavouriteMovieIcon/FavouriteMovieIcon";
+import playIcon from "../../images/playIcon.svg"
+import { Recommended } from "../../types/Recommended"
+import { FavouriteMovieIcon } from "../FavouriteMovieIcon/FavouriteMovieIcon"
 import {
   TrendingCardWrapper,
   TrendingInfoDetails,
@@ -12,9 +12,9 @@ import {
   TrendingPlay,
   TrendingPlayIcon,
   TrendingPlayText,
-} from "./styled";
+} from "./styled"
 
-type RecomendedCardProps = Omit<Recommended, "id">;
+type RecomendedCardProps = Omit<Recommended, "id">
 
 export function TrendingCard({
   title,
@@ -43,5 +43,5 @@ export function TrendingCard({
         <TrendingMovieTitle>{title}</TrendingMovieTitle>
       </TrendingInfoWrapper>
     </TrendingCardWrapper>
-  );
+  )
 }

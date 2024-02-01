@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import logo from "../../images/logo.svg";
+import { NavLink } from "react-router-dom"
+
+import logo from "../../images/logo.svg"
 import {
   BookmarkIcon,
   HomeIcon,
@@ -9,34 +10,38 @@ import {
   NavigationLogo,
   TvSeriesIcon,
   WrapperNavigation,
-} from "./styled";
+} from "./styled"
 
 export function NavigationMenuDesktop() {
+  const style = ({ isActive }: { isActive: boolean }) => ({
+    color: isActive ? "#ffffff" : "#5A698F",
+  })
+
   return (
     <WrapperNavigation>
       <NavigationLogo src={logo} />
       <NavigationList>
-        <Link to="/">
+        <NavLink style={style} to="/">
           <NavigationItem>
             <HomeIcon />
           </NavigationItem>
-        </Link>
-        <Link to="/movies">
+        </NavLink>
+        <NavLink style={style} to="/movies">
           <NavigationItem>
             <MoviesIcon />
           </NavigationItem>
-        </Link>
-        <Link to="/tv-series">
+        </NavLink>
+        <NavLink style={style} to="/tv-series">
           <NavigationItem>
             <TvSeriesIcon />
           </NavigationItem>
-        </Link>
-        <Link to="/favourite">
+        </NavLink>
+        <NavLink style={style} to="/favourite">
           <NavigationItem>
             <BookmarkIcon />
           </NavigationItem>
-        </Link>
+        </NavLink>
       </NavigationList>
     </WrapperNavigation>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import logo from "../../images/logo.svg";
+import { Link } from "react-router-dom"
+import logo from "../../images/logo.svg"
 import {
   BookmarkIcon,
   HomeIcon,
@@ -8,7 +8,7 @@ import {
   NavigationList,
   NavigationLogo,
   TvSeriesIcon,
-} from "./styled";
+} from "./styled"
 
 export function NavigationMenuMobile() {
   return (
@@ -37,5 +37,5 @@ export function NavigationMenuMobile() {
         </Link>
       </NavigationList>
     </>
-  );
+  )
 }

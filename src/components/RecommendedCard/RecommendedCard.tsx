@@ -1,7 +1,7 @@
-import { useMediaQuery } from "react-responsive";
-import playIcon from "../../images/playIcon.svg";
-import { Recommended } from "../../types/Recommended";
-import { FavouriteMovieIcon } from "../FavouriteMovieIcon/FavouriteMovieIcon";
+import { useMediaQuery } from "react-responsive"
+import playIcon from "../../images/playIcon.svg"
+import { Recommended } from "../../types/Recommended"
+import { FavouriteMovieIcon } from "../FavouriteMovieIcon/FavouriteMovieIcon"
 import {
   RecomendedCardInfoDetails,
   RecomendedCardInfoDot,
@@ -12,9 +12,9 @@ import {
   RecomendedPlay,
   RecomendedPlayIcon,
   RecomendedPlayText,
-} from "./styled";
+} from "./styled"
 
-type RecomendedCardProps = Omit<Recommended, "id">;
+type RecomendedCardProps = Omit<Recommended, "id">
 
 export function RecommendedCard({
   title,
@@ -24,7 +24,7 @@ export function RecommendedCard({
   rating,
   isBookmarked,
 }: RecomendedCardProps) {
-  const isWidth768 = useMediaQuery({ query: "(max-width: 768px)" });
+  const isWidth768 = useMediaQuery({ query: "(max-width: 768px)" })
   return (
     <div>
       <RecomendedCardMovieWrapper url={url}>
@@ -48,5 +48,5 @@ export function RecommendedCard({
         <RecomendedCardMovieTitle>{title}</RecomendedCardMovieTitle>
       </div>
     </div>
-  );
+  )
 }

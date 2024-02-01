@@ -1,7 +1,7 @@
-import { RecommendedList } from "../components/RecommendedList/RecommendedList";
-import { TrendingList } from "../components/TrendingList/TrendingList";
-import movie from "../images/movieTest.png";
-import { HomePageWrapper } from "./styled";
+import { RecommendedList } from "../components/RecommendedList/RecommendedList"
+import { TrendingList } from "../components/TrendingList/TrendingList"
+import movie from "../images/movieTest.png"
+import { HomePageWrapper } from "./styled"
 
 export function HomePage() {
   const arrayMovies = [
@@ -15,7 +15,7 @@ export function HomePage() {
       isBookmarked: true,
       isTrending: true,
     },
-  ];
+  ]
   return (
     <HomePageWrapper>
       <TrendingList arrayTrending={arrayMovies} />
@@ -24,5 +24,5 @@ export function HomePage() {
         arrayMovies={arrayMovies}
       />
     </HomePageWrapper>
-  );
+  )
 }

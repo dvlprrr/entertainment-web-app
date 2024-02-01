@@ -1,10 +1,10 @@
-import { Route, Routes } from "react-router-dom";
-import { NavigationMenu } from "./components/NavigationMenu/NavigationMenu";
-import { Search } from "./components/Search/Search";
-import { FavouritePage } from "./pages/FavouritePage";
-import { HomePage } from "./pages/HomePage";
-import { MoviesPage } from "./pages/MoviesPage";
-import { TVSeriesPage } from "./pages/TVSeriesPage";
+import { Route, Routes } from "react-router-dom"
+import { NavigationMenu } from "./components/NavigationMenu/NavigationMenu"
+import { Search } from "./components/Search/Search"
+import { FavouritePage } from "./pages/FavouritePage"
+import { HomePage } from "./pages/HomePage"
+import { MoviesPage } from "./pages/MoviesPage"
+import { TVSeriesPage } from "./pages/TVSeriesPage"
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         </Routes>
       </main>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

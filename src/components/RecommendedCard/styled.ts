@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-import { ReactComponent as Movies } from "../../images/movies.svg";
+import { ReactComponent as Movies } from "../../images/movies.svg"
 
 export const RecomendedCardInfoDetails = styled.div`
   display: flex;
@@ -13,12 +13,12 @@ export const RecomendedCardInfoDetails = styled.div`
     font-size: 11px;
     gap: 6px;
   }
-`;
+`
 
 export const RecomendedCardInfoText = styled.p`
   margin: 0;
   opacity: 0.8;
-`;
+`
 
 export const RecomendedCardInfoDot = styled.span`
   width: 4px;
@@ -31,7 +31,7 @@ export const RecomendedCardInfoDot = styled.span`
     width: 3px;
     height: 3px;
   }
-`;
+`
 
 export const RecomendedCardMovieIcon = styled(Movies)`
   width: 12px;
@@ -46,7 +46,7 @@ export const RecomendedCardMovieIcon = styled(Movies)`
     width: 10px;
     height: 10px;
   }
-`;
+`
 
 export const RecomendedCardMovieTitle = styled.p`
   margin: 5px 0 0 0;
@@ -56,7 +56,7 @@ export const RecomendedCardMovieTitle = styled.p`
   @media (max-width: 426px) {
     font-size: 14px;
   }
-`;
+`
 
 export const RecomendedPlay = styled.div`
   display: flex;
@@ -80,18 +80,18 @@ export const RecomendedPlay = styled.div`
   @media (max-width: 1200px) {
     margin-top: 0;
   }
-`;
+`
 
 export const RecomendedPlayIcon = styled.img`
   width: 30px;
   height: 30px;
-`;
+`
 
 export const RecomendedPlayText = styled.p`
   margin: 0;
   font-size: 18px;
   font-weight: 400;
-`;
+`
 
 export const RecomendedCardMovieWrapper = styled.div<{ url: string }>`
   position: relative;
@@ -144,4 +144,4 @@ export const RecomendedCardMovieWrapper = styled.div<{ url: string }>`
   @media (max-width: 475px) {
     height: 110px;
   }
-`;
+`

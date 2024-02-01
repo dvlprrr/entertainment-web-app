@@ -1,6 +1,6 @@
-import { RecommendedList } from "../components/RecommendedList/RecommendedList";
-import movie from "../images/movieTest.png";
-import { TVSeriesPageWrapper } from "./styled";
+import { RecommendedList } from "../components/RecommendedList/RecommendedList"
+import movie from "../images/movieTest.png"
+import { TVSeriesPageWrapper } from "./styled"
 
 export function TVSeriesPage() {
   const arrayMovies = [
@@ -14,10 +14,10 @@ export function TVSeriesPage() {
       isBookmarked: true,
       isTrending: true,
     },
-  ];
+  ]
   return (
     <TVSeriesPageWrapper>
       <RecommendedList arrayMovies={arrayMovies} recommendedTitle="TV Series" />
     </TVSeriesPageWrapper>
-  );
+  )
 }

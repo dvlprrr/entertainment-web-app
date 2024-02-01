@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const RecomendedWrapper = styled.section`
   width: 100%;
-`;
+`
 
 export const RecomendedTitle = styled.h2`
   margin: 0 0 35px;
@@ -13,7 +13,7 @@ export const RecomendedTitle = styled.h2`
     margin-bottom: 25px;
     font-size: 20px;
   }
-`;
+`
 
 export const RecomendedListWrapper = styled.div`
   display: grid;
@@ -31,4 +31,4 @@ export const RecomendedListWrapper = styled.div`
   @media (max-width: 426px) {
     gap: 15px;
   }
-`;
+`

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const WrapperSearch = styled.div`
   padding-top: 32px;
@@ -9,7 +9,7 @@ export const WrapperSearch = styled.div`
     padding-top: 24px;
     gap: 16px;
   }
-`;
+`
 
 export const SearchIcon = styled.img`
   width: 32px;
@@ -18,7 +18,7 @@ export const SearchIcon = styled.img`
   @media (max-width: 426px) {
     width: 24px;
   }
-`;
+`
 
 export const Searchinput = styled.input`
   font-size: 24px;
@@ -48,4 +48,4 @@ export const Searchinput = styled.input`
   @media (max-width: 426px) {
     font-size: 16px;
   }
-`;
+`

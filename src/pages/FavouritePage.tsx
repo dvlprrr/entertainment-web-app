@@ -1,6 +1,6 @@
-import { RecommendedList } from "../components/RecommendedList/RecommendedList";
-import movie from "../images/movieTest.png";
-import { FavouritePageWrapper } from "./styled";
+import { RecommendedList } from "../components/RecommendedList/RecommendedList"
+import movie from "../images/movieTest.png"
+import { FavouritePageWrapper } from "./styled"
 
 export function FavouritePage() {
   const arrayMovies = [
@@ -14,7 +14,7 @@ export function FavouritePage() {
       isBookmarked: true,
       isTrending: true,
     },
-  ];
+  ]
   return (
     <FavouritePageWrapper>
       <RecommendedList
@@ -26,5 +26,5 @@ export function FavouritePage() {
         recommendedTitle="Bookmarked TV Series"
       />
     </FavouritePageWrapper>
-  );
+  )
 }

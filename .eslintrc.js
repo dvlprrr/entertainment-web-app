@@ -41,4 +41,4 @@ module.exports = {
     "no-confusing-arrow": "off",
     "implicit-arrow-linebreak": "off",
   },
-};
+}
