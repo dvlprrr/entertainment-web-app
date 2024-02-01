@@ -6,7 +6,7 @@ interface FavouriteMovieIconProps {
 
 export function FavouriteMovieIcon({ isBookmarked }: FavouriteMovieIconProps) {
   return (
-    <FavouriteMovieWrapper isBookmarked={isBookmarked}>
+    <FavouriteMovieWrapper isbookmarked={isBookmarked}>
       <FavouriteMovie />
     </FavouriteMovieWrapper>
   )

@@ -20,6 +20,7 @@ const baseIconStyles = `
       fill: #FC4747; 
     }
   }
+
   @media (max-width: 426px) {
     height: 16px;
   }
@@ -47,8 +48,10 @@ export const Nav = styled.nav`
     max-width: 100%;
     height: calc(100vh - 90%);
     padding: 18px 24px;
+    border-radius: 8px;
   }
   @media (max-width: 426px) {
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;

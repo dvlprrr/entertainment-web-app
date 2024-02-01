@@ -5,7 +5,7 @@ export const FavouriteMovie = styled(Favourite)`
   cursor: pointer;
 `
 
-export const FavouriteMovieWrapper = styled.div<{ isBookmarked: boolean }>`
+export const FavouriteMovieWrapper = styled.div<{ isbookmarked: boolean }>`
   align-self: flex-end;
   border-radius: 32px;
   background-color: #161d2f;
@@ -17,7 +17,7 @@ export const FavouriteMovieWrapper = styled.div<{ isBookmarked: boolean }>`
   justify-content: center;
 
   ${(props) =>
-    props.isBookmarked
+    props.isbookmarked
       ? `${FavouriteMovie} {
       path {
         transition: 0.3s ease;
