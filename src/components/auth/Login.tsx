@@ -21,7 +21,6 @@ export function Login() {
         <AuthForm>
           <AuthInput placeholder="Email address" />
           <AuthInput placeholder="Password" />
-
           <AuthButton type="button">Create an account</AuthButton>
           <AuthLinkWrapper>
             <AuthLinkInfo>Don’t have an account?</AuthLinkInfo>
