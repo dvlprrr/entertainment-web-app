@@ -6,7 +6,7 @@ export const WrapperTrending = styled.div`
   overflow: hidden;
 
   @media (max-width: 768px) {
-    margin-top: 35px;
+    margin-top: 20px;
   }
   @media (max-width: 426px) {
     margin-top: 25px;
@@ -14,9 +14,13 @@ export const WrapperTrending = styled.div`
 `
 
 export const TrendingTitle = styled.h2`
-  margin: 0 0 25px;
+  margin: 0 0 35px;
   font-size: 32px;
   font-weight: 300;
+
+  @media (max-width: 768px) {
+    margin-bottom: 25px;
+  }
 
   @media (max-width: 426px) {
     margin-bottom: 16px;

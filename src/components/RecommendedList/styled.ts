@@ -11,7 +11,11 @@ export const RecomendedTitle = styled.h2`
 
   @media (max-width: 768px) {
     margin-bottom: 25px;
+  }
+
+  @media (max-width: 426px) {
     font-size: 20px;
+    margin-bottom: 16px;
   }
 `
 
