@@ -43,7 +43,7 @@ export const AuthForm = styled.form`
   gap: 24px;
 `
 
-export const AuthInput = styled.input`
+export const AuthInput = styled.input<{ isError: boolean }>`
   outline: none;
   background-color: transparent;
   border: none;
@@ -53,11 +53,14 @@ export const AuthInput = styled.input`
   padding-bottom: 17px;
   border-bottom: 1px solid #5a698f;
   caret-color: #fc4747;
+  width: 100%;
 
   &:focus {
-    border-bottom: 1px solid #ffffff;
+    border-bottom: ${({ isError }) =>
+      isError ? "1px solid #fc4747" : "1px solid #ffffff"};
     transition: border-bottom 0.6s;
   }
+  border-bottom: ${({ isError }) => isError && "1px solid #fc4747"};
 `
 export const AuthButton = styled.button`
   align-self: center;
@@ -98,4 +101,10 @@ export const AuthLink = styled(Link)`
     color: #ffffff;
     transition: color 0.6s;
   }
+`
+
+export const AuthErrorMessage = styled.p`
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #fc4747;
 `

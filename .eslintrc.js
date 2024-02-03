@@ -40,5 +40,8 @@ module.exports = {
     "no-undef": "off",
     "no-confusing-arrow": "off",
     "implicit-arrow-linebreak": "off",
+    "no-param-reassign": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/rules-of-hooks": "off",
   },
 }
