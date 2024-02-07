@@ -1,4 +1,4 @@
-/// <reference types="rsbuild" />
+/// <reference types="@rsbuild/core/types" />
 
 declare module "*.svg" {
   export const ReactComponent: React.FunctionComponent<
@@ -7,5 +7,3 @@ declare module "*.svg" {
   const content: string
   export default content
 }
-declare module "*.png"
-declare module "*.module.css"
