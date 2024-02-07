@@ -43,5 +43,10 @@ module.exports = {
     "no-param-reassign": "off",
     "react/jsx-props-no-spreading": "off",
     "react-hooks/rules-of-hooks": "off",
+    "no-extra-boolean-cast": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-useless-return": "off",
+    "consistent-return": "off",
   },
 }

@@ -59,6 +59,24 @@ export const loginUser = createAsyncThunk<
   }
 })
 
+export const checkAuth = createAsyncThunk<
+  User,
+  string,
+  { extra: Extra; rejectWithValue: string }
+>("@@user/isAuth", async (jwt, { extra: { client, api }, rejectWithValue }) => {
+  try {
+    const { data } = await client.get(api.CHECK_JWT, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwt}`,
+      },
+    })
+    return data
+  } catch (error) {
+    return rejectWithValue(error)
+  }
+})
+
 export const UserSlice = createSlice({
   name: "@@user",
   initialState,
@@ -79,6 +97,9 @@ export const UserSlice = createSlice({
       .addCase(loginUser.fulfilled, (state, { payload }) => {
         state.user = payload
         state.status = "received"
+      })
+      .addCase(checkAuth.fulfilled, (state, { payload }) => {
+        state.user = payload
       })
   },
 })
