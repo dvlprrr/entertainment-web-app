@@ -71,10 +71,10 @@ export function Login() {
               })}
               placeholder="Email address"
             />
+            {errors.email && (
+              <AuthErrorMessage>{errors.email.message}</AuthErrorMessage>
+            )}
           </div>
-          {errors.email && (
-            <AuthErrorMessage>{errors.email.message}</AuthErrorMessage>
-          )}
           <div>
             <AuthInput
               isError={Boolean(errors.password)}
@@ -89,6 +89,7 @@ export function Login() {
                 },
               })}
               placeholder="Password"
+              type="password"
             />
             {errors.password && (
               <AuthErrorMessage>{errors.password.message}</AuthErrorMessage>

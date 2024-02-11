@@ -17,7 +17,7 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
   useEffect(() => {
     if (jwt) dispatch(checkAuth(jwt))
   }, [dispatch, jwt])
-  console.log(jwt)
+
   if (!jwt) {
     return <Navigate to="/sign-in" replace />
   }
