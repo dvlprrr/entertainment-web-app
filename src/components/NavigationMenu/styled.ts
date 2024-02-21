@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom"
+import { Tooltip } from "react-tooltip"
 import styled from "styled-components"
 import { ReactComponent as Bookmark } from "../../images/bookmark.svg"
+import { ReactComponent as Edit } from "../../images/editIcon.svg"
 import { ReactComponent as Home } from "../../images/home.svg"
 import { ReactComponent as Movies } from "../../images/movies.svg"
+import { ReactComponent as SignOut } from "../../images/signOut.svg"
 import { ReactComponent as TvSeries } from "../../images/tvSeries.svg"
+import { ReactComponent as Admin } from "../../images/wrench.svg"
 
 const baseIconStyles = `
   cursor: pointer;
@@ -41,6 +46,7 @@ export const Nav = styled.nav`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 1;
 
   @media (max-width: 768px) {
     position: static;
@@ -144,4 +150,70 @@ export const NavigationImageWrapper = styled.div`
     width: 24px;
     height: 24px;
   }
+`
+
+export const StyledTooltip = styled(Tooltip)`
+  background-color: #fc4747 !important;
+  margin-left: 20px;
+  border-radius: 12px !important;
+  padding: 10px 15px !important;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
+`
+
+export const TooltipMenu = styled.ul`
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`
+
+export const TooltipItem = styled.li`
+  margin: 0;
+  list-style-type: none;
+  font-size: 15px;
+  transition: color 0.3s;
+
+  &:hover {
+    color: black;
+  }
+`
+
+export const SignOutIcon = styled(SignOut)`
+  width: 15px;
+  height: 15px;
+
+  path {
+    fill: currentColor;
+  }
+`
+
+export const EditIcon = styled(Edit)`
+  width: 15px;
+  height: 15px;
+
+  path {
+    fill: currentColor;
+  }
+`
+
+export const AdminIcon = styled(Admin)`
+  width: 15px;
+  height: 15px;
+
+  path {
+    fill: currentColor;
+  }
+`
+
+export const TooltipLink = styled(Link)`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: currentColor;
 `

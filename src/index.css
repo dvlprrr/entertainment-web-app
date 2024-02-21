@@ -17,7 +17,7 @@ body {
   color: #ffffff;
 }
 .main {
-  margin: 32px 0 0;
+  margin: 32px 0 20px;
   padding: 0 36px 0 164px;
 }
 @media (max-width: 768px) {
