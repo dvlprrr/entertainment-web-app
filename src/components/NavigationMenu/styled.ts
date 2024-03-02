@@ -7,7 +7,6 @@ import { ReactComponent as Home } from "../../images/home.svg"
 import { ReactComponent as Movies } from "../../images/movies.svg"
 import { ReactComponent as SignOut } from "../../images/signOut.svg"
 import { ReactComponent as TvSeries } from "../../images/tvSeries.svg"
-import { ReactComponent as Admin } from "../../images/wrench.svg"
 
 const baseIconStyles = `
   cursor: pointer;
@@ -178,7 +177,7 @@ export const TooltipItem = styled.li`
   transition: color 0.3s;
 
   &:hover {
-    color: black;
+    color: #000000;
   }
 `
 
@@ -192,15 +191,6 @@ export const SignOutIcon = styled(SignOut)`
 `
 
 export const EditIcon = styled(Edit)`
-  width: 15px;
-  height: 15px;
-
-  path {
-    fill: currentColor;
-  }
-`
-
-export const AdminIcon = styled(Admin)`
   width: 15px;
   height: 15px;
 

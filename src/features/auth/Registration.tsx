@@ -1,8 +1,8 @@
 import { SubmitHandler, useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
-import { registerUser } from "../../features/users-slice"
 import logo from "../../images/logo.svg"
 import { useAppDispatch } from "../../redux-toolkit"
+import { registerUser } from "../users-slice"
 import {
   AuthButton,
   AuthContainer,

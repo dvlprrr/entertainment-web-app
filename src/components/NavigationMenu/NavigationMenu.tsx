@@ -1,3 +1,4 @@
+import { Wrench } from "@phosphor-icons/react"
 import { useCallback } from "react"
 import { useDispatch } from "react-redux"
 import { useMediaQuery } from "react-responsive"
@@ -6,8 +7,6 @@ import defalutAvatar from "../../images/defalutAvatar.svg"
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop"
 import { NavigationMenuMobile } from "./NavigationMenuMobile"
 import {
-  AdminIcon,
-  EditIcon,
   Nav,
   NavigationImageWrapper,
   NavigationUserImage,
@@ -37,15 +36,9 @@ export function NavigationMenu() {
       >
         <TooltipMenu>
           <TooltipItem>
-            <TooltipLink to="">
-              <AdminIcon />
-              Admin
-            </TooltipLink>
-          </TooltipItem>
-          <TooltipItem>
-            <TooltipLink to="">
-              <EditIcon />
-              Edit
+            <TooltipLink to="settings">
+              <Wrench size={16} />
+              Settings
             </TooltipLink>
           </TooltipItem>
           <TooltipItem>
