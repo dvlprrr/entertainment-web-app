@@ -1,12 +1,23 @@
 import type { SelectChangeEvent } from "@mui/material"
 import { useState } from "react"
+import { SubmitHandler, useForm } from "react-hook-form"
+import { createFilm } from "../components/Settings/hooks/service"
 import { useGetGenres } from "../components/Settings/hooks/useGetGenres"
+import { Movie } from "../types/Movie"
 
 export const useActionsWithMovies = () => {
   const [selectedGenres, setSelectedGenres] = useState<string[]>([])
   const [movieType, setMovieType] = useState("")
   const [age, setAge] = useState("")
   const { data: genres } = useGetGenres()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<Movie>({
+    mode: "onSubmit",
+  })
 
   const handleSelectedGenres = (
     event: SelectChangeEvent<typeof selectedGenres>,
@@ -35,10 +46,27 @@ export const useActionsWithMovies = () => {
     return selectedGenresIds.filter((id) => id !== 0)
   }
 
+  const onSubmit: SubmitHandler<Movie> = (data) => {
+    data.genre = selectGenresIds()
+    data.typeId = Number(movieType)
+    data.ageRating = age
+    createFilm(data)
+      .then(() => {
+        reset()
+      })
+      .catch((error) => {
+        console.error(error.message)
+      })
+  }
+
   return {
     selectedGenres,
     age,
     movieType,
+    errors,
+    register,
+    handleSubmit,
+    onSubmit,
     handleSelectedGenres,
     handleMovieTypeChange,
     handleAgeChange,

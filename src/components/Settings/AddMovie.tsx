@@ -8,10 +8,7 @@ import {
   OutlinedInput,
   Select,
 } from "@mui/material"
-import { SubmitHandler, useForm } from "react-hook-form"
 import { useActionsWithMovies } from "../../hooks/useActionsWithMovies"
-import { Movie } from "../../types/Movie"
-import { createFilm } from "./hooks/service"
 import { useGetFilmTypes } from "./hooks/useGetFilmTypes"
 import { useGetGenres } from "./hooks/useGetGenres"
 import {
@@ -28,35 +25,17 @@ export function AddMovie() {
     age,
     movieType,
     selectedGenres,
+    errors,
     handleSelectedGenres,
     handleMovieTypeChange,
     handleAgeChange,
-    selectGenresIds,
+    register,
+    handleSubmit,
+    onSubmit,
   } = useActionsWithMovies()
   const { data: filmTypes } = useGetFilmTypes()
   const { data: genres } = useGetGenres()
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<Movie>({
-    mode: "onSubmit",
-  })
 
-  const onSubmit: SubmitHandler<Movie> = (data) => {
-    data.genre = selectGenresIds()
-    data.typeId = Number(movieType)
-    data.ageRating = age
-    console.log(data)
-    createFilm(data)
-      .then(() => {
-        reset()
-      })
-      .catch((error) => {
-        console.error(error.message)
-      })
-  }
   const date = new Date()
   return (
     <AddMovieWrapper>
