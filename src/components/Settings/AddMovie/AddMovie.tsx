@@ -8,18 +8,19 @@ import {
   OutlinedInput,
   Select,
 } from "@mui/material"
-import { useActionsWithMovies } from "../../hooks/useActionsWithMovies"
-import { useGetFilmTypes } from "./hooks/useGetFilmTypes"
-import { useGetGenres } from "./hooks/useGetGenres"
+import { useActionsWithMovies } from "../../../hooks/useActionsWithMovies"
+import { useGetFilmTypes } from "../hooks/useGetFilmTypes"
+import { useGetGenres } from "../hooks/useGetGenres"
 import {
   AddMovieForm,
+  AddMovieInfo,
   AddMovieInput,
   AddMovieLabel,
   AddMovieWrapper,
   ErrorMessage,
   SubmitButton,
   styleFormControll,
-} from "./styled"
+} from "../styled"
 
 export function AddMovie() {
   const {
@@ -69,15 +70,7 @@ export function AddMovie() {
           />
           {errors.url && <ErrorMessage>{errors.url.message}</ErrorMessage>}
         </AddMovieLabel>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: "20px",
-            alignItems: "center",
-            width: "70%",
-          }}
-        >
+        <AddMovieInfo>
           <AddMovieLabel>
             Year
             <AddMovieInput
@@ -148,7 +141,7 @@ export function AddMovie() {
               ))}
             </Select>
           </FormControl>
-        </div>
+        </AddMovieInfo>
         <SubmitButton type="submit">Add</SubmitButton>
       </AddMovieForm>
     </AddMovieWrapper>

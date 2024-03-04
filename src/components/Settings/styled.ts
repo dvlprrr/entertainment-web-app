@@ -39,13 +39,6 @@ export const styleFormControll = {
     },
 }
 
-export const styleDemoContainer = {
-  width: "fit-content",
-  "& .MuiOutlinedInput-notchedOutline": {
-    border: "1px solid #ffffff",
-  },
-}
-
 export const SettingsNavigationListWrapper = styled.ul`
   margin: 0;
   padding: 10px;
@@ -97,6 +90,7 @@ export const DashboardInfo = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
+  width: 33%;
 `
 
 export const DashboardInfoContent = styled.div`
@@ -115,6 +109,11 @@ export const DashboardInfoTitle = styled.p`
 export const DashboardInfoAmount = styled.p`
   margin: 0;
   font-size: 24px;
+`
+
+export const DashboardInfoWrapper = styled.div`
+  display: flex;
+  gap: 20px;
 `
 
 export const AddMovieWrapper = styled.div`
@@ -154,6 +153,14 @@ export const AddMovieInput = styled.input`
   }
 `
 
+export const AddMovieInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  width: 70%;
+`
+
 export const ErrorMessage = styled.p`
   font-size: 14px;
   margin: 0;
@@ -179,4 +186,24 @@ export const SubmitButton = styled.button`
       background-color 0.6s,
       color 0.6s;
   }
+`
+
+export const ChartsWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`
+
+export const LineChartWrapper = styled.div`
+  width: 65%;
+`
+
+export const PieChartWrapper = styled.div`
+  width: 33%;
+`
+
+export const ChartTitle = styled.h2`
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: 200;
+  text-align: center;
 `

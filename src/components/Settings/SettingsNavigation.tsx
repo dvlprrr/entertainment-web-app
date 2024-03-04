@@ -11,7 +11,7 @@ export function SettingsNavigation() {
     <SettingsNavigationWrapper>
       <SettingsNavigationListWrapper>
         {config.map((item) => (
-          <StyledLink to={item.path}>
+          <StyledLink key={item.path} to={item.path}>
             <SettingsNavigationItem>
               <item.icon size={16} />
               {item.title}
