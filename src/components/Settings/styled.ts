@@ -147,6 +147,11 @@ export const AddMovieInput = styled.input`
   border-radius: 8px;
   color: currentColor;
   padding: 10px;
+
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `
 
 export const ErrorMessage = styled.p`
@@ -154,4 +159,24 @@ export const ErrorMessage = styled.p`
   margin: 0;
   margin-top: 5px;
   color: #ff0000;
+`
+
+export const SubmitButton = styled.button`
+  font-weight: 200;
+  font-size: 20px;
+  width: 20%;
+  padding: 10px;
+  background-color: #fc4747;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transition:
+      background-color 0.6s,
+      color 0.6s;
+  }
 `

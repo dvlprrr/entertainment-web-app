@@ -17,6 +17,7 @@ import {
   AddMovieLabel,
   AddMovieWrapper,
   ErrorMessage,
+  SubmitButton,
   styleFormControll,
 } from "./styled"
 
@@ -148,7 +149,7 @@ export function AddMovie() {
             </Select>
           </FormControl>
         </div>
-        <button type="submit">aa</button>
+        <SubmitButton type="submit">Add</SubmitButton>
       </AddMovieForm>
     </AddMovieWrapper>
   )

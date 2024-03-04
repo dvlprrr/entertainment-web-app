@@ -53,6 +53,9 @@ export const useActionsWithMovies = () => {
     createFilm(data)
       .then(() => {
         reset()
+        setMovieType("")
+        setAge("")
+        setSelectedGenres([])
       })
       .catch((error) => {
         console.error(error.message)
