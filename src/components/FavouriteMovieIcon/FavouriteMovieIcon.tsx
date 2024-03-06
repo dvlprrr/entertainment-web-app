@@ -1,12 +1,8 @@
 import { FavouriteMovie, FavouriteMovieWrapper } from "./styled"
 
-interface FavouriteMovieIconProps {
-  isBookmarked: boolean
-}
-
-export function FavouriteMovieIcon({ isBookmarked }: FavouriteMovieIconProps) {
+export function FavouriteMovieIcon() {
   return (
-    <FavouriteMovieWrapper isbookmarked={isBookmarked}>
+    <FavouriteMovieWrapper>
       <FavouriteMovie />
     </FavouriteMovieWrapper>
   )

@@ -1,6 +1,6 @@
 import { useMediaQuery } from "react-responsive"
 import playIcon from "../../images/playIcon.svg"
-import { Recommended } from "../../types/Recommended"
+import { Movie } from "../../types/Movie"
 import { FavouriteMovieIcon } from "../FavouriteMovieIcon/FavouriteMovieIcon"
 import {
   RecomendedCardInfoDetails,
@@ -14,21 +14,13 @@ import {
   RecomendedPlayText,
 } from "./styled"
 
-type RecomendedCardProps = Omit<Recommended, "id">
-
-export function RecommendedCard({
-  title,
-  url,
-  year,
-  category,
-  rating,
-  isBookmarked,
-}: RecomendedCardProps) {
+export function RecommendedCard({ title, url, year, ageRating, genre }: Movie) {
   const isWidth768 = useMediaQuery({ query: "(max-width: 768px)" })
+
   return (
     <div>
       <RecomendedCardMovieWrapper url={url}>
-        <FavouriteMovieIcon isBookmarked={isBookmarked} />
+        <FavouriteMovieIcon />
         {!isWidth768 && (
           <RecomendedPlay>
             <RecomendedPlayIcon src={playIcon} alt="play" />
@@ -41,9 +33,9 @@ export function RecommendedCard({
           <RecomendedCardInfoText>{year}</RecomendedCardInfoText>
           <RecomendedCardInfoDot />
           <RecomendedCardMovieIcon />
-          <RecomendedCardInfoText>{category}</RecomendedCardInfoText>
+          <RecomendedCardInfoText>{ageRating}</RecomendedCardInfoText>
           <RecomendedCardInfoDot />
-          <RecomendedCardInfoText>{rating}</RecomendedCardInfoText>
+          <RecomendedCardInfoText>{genre}</RecomendedCardInfoText>
         </RecomendedCardInfoDetails>
         <RecomendedCardMovieTitle>{title}</RecomendedCardMovieTitle>
       </div>

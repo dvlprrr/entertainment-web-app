@@ -5,7 +5,7 @@ export const FavouriteMovie = styled(Favourite)`
   cursor: pointer;
 `
 
-export const FavouriteMovieWrapper = styled.div<{ isbookmarked: boolean }>`
+export const FavouriteMovieWrapper = styled.div`
   align-self: flex-end;
   border-radius: 32px;
   background-color: #161d2f;
@@ -15,32 +15,4 @@ export const FavouriteMovieWrapper = styled.div<{ isbookmarked: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  ${(props) =>
-    props.isbookmarked
-      ? `${FavouriteMovie} {
-      path {
-        transition: 0.3s ease;
-        fill: #fff;
-      }
-    }
-
-    &:hover {
-      ${FavouriteMovie} {
-        path {
-          fill: #161d2f;
-        }
-      }
-    }
-    `
-      : ` &:hover {
-        transition: 0.3s ease;
-        background-color: #ffffff;
-        ${FavouriteMovie} {
-          path {
-            transition: 0.3s ease;
-            stroke: #161d2f;
-          }
-        }
-      } `}
 `

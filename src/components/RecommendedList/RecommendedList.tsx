@@ -1,4 +1,7 @@
-import { Recommended } from "../../types/Recommended"
+/* eslint-disable react/jsx-fragments */
+import { Fragment } from "react"
+import { useGetFavouriteMoviesForCurrentUser } from "../../pages/hooks/useGetFavouriteMoviesForCurrentUser"
+import { Movie } from "../../types/Movie"
 import { RecommendedCard } from "../RecommendedCard/RecommendedCard"
 import {
   RecomendedListWrapper,
@@ -6,38 +9,22 @@ import {
   RecomendedWrapper,
 } from "./styled"
 
-interface RecomendedListT {
-  recommendedTitle: string
-  arrayMovies: Recommended[]
-}
+export function RecommendedList() {
+  const { favourites } = useGetFavouriteMoviesForCurrentUser()
 
-export function RecommendedList({
-  recommendedTitle,
-  arrayMovies,
-}: RecomendedListT) {
-  const numberOfCards = 8
-
-  const duplicatedData = Array.from({ length: numberOfCards }, (_, index) => {
-    const dataIndex = index % (arrayMovies?.length || 0)
-    return arrayMovies?.[dataIndex]
-  })
-
-  const cards = duplicatedData.map((item, index) => (
-    <RecommendedCard
-      key={index}
-      title={item?.title}
-      url={item?.url}
-      year={item?.year}
-      category={item?.category}
-      rating={item?.rating}
-      isBookmarked={item?.isBookmarked}
-      isTrending={item?.isTrending}
-    />
-  ))
   return (
     <RecomendedWrapper>
-      <RecomendedTitle>{recommendedTitle}</RecomendedTitle>
-      <RecomendedListWrapper>{cards}</RecomendedListWrapper>
+      <RecomendedListWrapper>
+        {favourites &&
+          Object?.keys(favourites)?.map((key: string) => (
+            <Fragment key={key}>
+              <RecomendedTitle>{key}</RecomendedTitle>
+              {favourites[key].map((item: Movie) => (
+                <RecommendedCard key={item.id} {...item} />
+              ))}
+            </Fragment>
+          ))}
+      </RecomendedListWrapper>
     </RecomendedWrapper>
   )
 }
