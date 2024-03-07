@@ -133,6 +133,8 @@ export const TvSeriesIcon = styled(TvSeries)`
 export const NavigationUserImage = styled.img`
   cursor: pointer;
   width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 `
 
 export const NavigationImageWrapper = styled.div`

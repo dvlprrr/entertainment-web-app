@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
-export const RecomendedWrapper = styled.section`
+export const FavouritesWrapper = styled.section`
   width: 100%;
 `
 
-export const RecomendedTitle = styled.h2`
+export const FavouritesTitle = styled.h2`
   margin: 0 0 35px;
   font-size: 32px;
   font-weight: 300;
@@ -19,7 +19,7 @@ export const RecomendedTitle = styled.h2`
   }
 `
 
-export const RecomendedListWrapper = styled.div`
+export const FavouritesListWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;

@@ -1,8 +1,12 @@
 import { FavouriteMovie, FavouriteMovieWrapper } from "./styled"
 
-export function FavouriteMovieIcon() {
+type FavouriteMovieIconT = {
+  onClick: () => void
+}
+export function FavouriteMovieIcon({ onClick }: FavouriteMovieIconT) {
+  const isBookmarked = true
   return (
-    <FavouriteMovieWrapper>
+    <FavouriteMovieWrapper onClick={onClick} isBookmarked={isBookmarked}>
       <FavouriteMovie />
     </FavouriteMovieWrapper>
   )

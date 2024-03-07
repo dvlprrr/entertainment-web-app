@@ -1,10 +1,10 @@
-import { RecommendedList } from "../components/RecommendedList/RecommendedList"
+import { FavouritesList } from "../components/FavouritesList/FavouritesList"
 import { FavouritePageWrapper } from "./styled"
 
 export function FavouritePage() {
   return (
     <FavouritePageWrapper>
-      <RecommendedList />
+      <FavouritesList />
     </FavouritePageWrapper>
   )
 }

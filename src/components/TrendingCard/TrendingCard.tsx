@@ -1,5 +1,5 @@
 import playIcon from "../../images/playIcon.svg"
-import { Recommended } from "../../types/Recommended"
+
 import { FavouriteMovieIcon } from "../FavouriteMovieIcon/FavouriteMovieIcon"
 import {
   TrendingCardWrapper,
@@ -14,33 +14,24 @@ import {
   TrendingPlayText,
 } from "./styled"
 
-type RecomendedCardProps = Omit<Recommended, "id">
-
-export function TrendingCard({
-  title,
-  url,
-  year,
-  category,
-  rating,
-  isBookmarked,
-}: RecomendedCardProps) {
+export function TrendingCard() {
   return (
-    <TrendingCardWrapper url={url}>
-      <FavouriteMovieIcon isBookmarked={isBookmarked} />
+    <TrendingCardWrapper url="asas">
+      <FavouriteMovieIcon />
       <TrendingPlay>
         <TrendingPlayIcon src={playIcon} alt="play" />
         <TrendingPlayText>Play</TrendingPlayText>
       </TrendingPlay>
       <TrendingInfoWrapper>
         <TrendingInfoDetails>
-          <TrendingInfoText>{year}</TrendingInfoText>
+          <TrendingInfoText>2023</TrendingInfoText>
           <TrendingInfoDot />
           <TrendingMovieIcon />
-          <TrendingInfoText>{category}</TrendingInfoText>
+          <TrendingInfoText>asd</TrendingInfoText>
           <TrendingInfoDot />
-          <TrendingInfoText>{rating}</TrendingInfoText>
+          <TrendingInfoText>afafa</TrendingInfoText>
         </TrendingInfoDetails>
-        <TrendingMovieTitle>{title}</TrendingMovieTitle>
+        <TrendingMovieTitle>afas</TrendingMovieTitle>
       </TrendingInfoWrapper>
     </TrendingCardWrapper>
   )

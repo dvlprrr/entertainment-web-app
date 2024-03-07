@@ -3,7 +3,7 @@ import { useCallback } from "react"
 import { useDispatch } from "react-redux"
 import { useMediaQuery } from "react-responsive"
 import { logOut } from "../../features/users-slice"
-import defalutAvatar from "../../images/defalutAvatar.svg"
+import { useGetUser } from "../../pages/hooks/useGetUser"
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop"
 import { NavigationMenuMobile } from "./NavigationMenuMobile"
 import {
@@ -20,6 +20,7 @@ import {
 export function NavigationMenu() {
   const isWidth768 = useMediaQuery({ query: "(max-width: 768px)" })
   const dispatch = useDispatch()
+  const { user } = useGetUser()
   const handleLogout = useCallback(() => {
     dispatch(logOut())
   }, [dispatch])
@@ -27,7 +28,7 @@ export function NavigationMenu() {
     <Nav>
       {!isWidth768 ? <NavigationMenuDesktop /> : <NavigationMenuMobile />}
       <NavigationImageWrapper id="settings">
-        <NavigationUserImage src={defalutAvatar} />
+        <NavigationUserImage src={user?.avatar} />
       </NavigationImageWrapper>
       <StyledTooltip
         anchorSelect="#settings"

@@ -3,7 +3,6 @@ export type Movie = {
   title: string
   url: string
   year: number
-  typeId: number
+  filmType: string
   ageRating: string
-  genre: number[]
 }

@@ -101,6 +101,7 @@ export const RecomendedCardMovieWrapper = styled.div<{ url: string }>`
   height: 210px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   background-image: url(${({ url }) => url});
   display: flex;
   flex-direction: column;
