@@ -8,7 +8,6 @@ export function useGetFilmTypes() {
 
   if (error) {
     console.error("Ошибка при загрузке типов фильмов:", error)
-    return { data: null, error }
   }
 
   return { data: data?.data }

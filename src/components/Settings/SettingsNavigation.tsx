@@ -1,4 +1,4 @@
-import { config } from "./config"
+import { congigRoutePath } from "./config"
 import {
   SettingsNavigationItem,
   SettingsNavigationListWrapper,
@@ -10,7 +10,7 @@ export function SettingsNavigation() {
   return (
     <SettingsNavigationWrapper>
       <SettingsNavigationListWrapper>
-        {config.map((item) => (
+        {congigRoutePath.map((item) => (
           <StyledLink key={item.path} to={item.path}>
             <SettingsNavigationItem>
               <item.icon size={16} />

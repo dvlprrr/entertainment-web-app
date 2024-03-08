@@ -1,8 +1,6 @@
-import axios from "axios"
-import { BASE_URL } from "../../../config"
 import { FilmTypes } from "../../../types/FilmTypes"
 import { Genres } from "../../../types/Genres"
-import type { Movie } from "../../../types/Movie"
+import { axiosInstance } from "../../../utils/axiosinstance"
 
 type getFilmTypesT = {
   data: FilmTypes[]
@@ -11,11 +9,30 @@ type getFilmTypesT = {
 type getGenresT = {
   data: Genres[]
 }
+
+type getAgeRatingT = {
+  data: {
+    id: number
+    name: string
+  }[]
+}
+export type MovieToSend = {
+  title: string
+  url: string
+  year: number
+  typeId: number
+  ageRatingId: number
+  genre: number[]
+}
+
 export const getFilmTypes = (): Promise<getFilmTypesT> =>
-  axios.get(`${BASE_URL}/film-type`)
+  axiosInstance.get("/film-type")
 
 export const getGenres = (): Promise<getGenresT> =>
-  axios.get(`${BASE_URL}/genre-film`)
+  axiosInstance.get("/genre-film")
 
-export const createFilm = (data: Movie) =>
-  axios.post(`${BASE_URL}/movies`, data)
+export const createFilm = (data: MovieToSend) =>
+  axiosInstance.post("/movies", data)
+
+export const getAgeRatings = (): Promise<getAgeRatingT> =>
+  axiosInstance.get("/age-rating")

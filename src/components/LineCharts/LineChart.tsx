@@ -8,8 +8,9 @@ import {
   Title,
   Tooltip,
 } from "chart.js"
+import { Line } from "react-chartjs-2"
+import styled from "styled-components"
 import { monthsList as labels } from "../Settings/constant"
-import { StyledLine } from "./styled"
 
 Chart.register(
   CategoryScale,
@@ -19,6 +20,12 @@ Chart.register(
   Title,
   Tooltip,
 )
+
+export const StyledLine = styled(Line)`
+  border-radius: 12px;
+  background-color: #161d2f;
+  padding: 10px;
+`
 
 export const options = {
   responsive: true,

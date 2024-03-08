@@ -1,5 +1,5 @@
 import axios from "axios"
-import { BASE_URL } from "../../config"
+import { BASE_URL } from "../../features/config"
 import { Favourites } from "../../types/Favourites"
 import { User } from "../../types/User"
 

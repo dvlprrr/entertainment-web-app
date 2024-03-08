@@ -1,9 +1,9 @@
 import { Wrench } from "@phosphor-icons/react"
 import { useCallback } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
+import { selectCurrentUser } from "../../features/users-selectors"
 import { logOut } from "../../features/users-slice"
-import { useGetUser } from "../../pages/hooks/useGetUser"
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop"
 import { NavigationMenuMobile } from "./NavigationMenuMobile"
 import {
@@ -18,22 +18,22 @@ import {
 } from "./styled"
 
 export function NavigationMenu() {
-  const isWidth768 = useMediaQuery({ query: "(max-width: 768px)" })
+  const isMatches768 = useMediaQuery({ query: "(max-width: 768px)" })
   const dispatch = useDispatch()
-  const { user } = useGetUser()
+  const user = useSelector(selectCurrentUser)
   const handleLogout = useCallback(() => {
     dispatch(logOut())
   }, [dispatch])
   return (
     <Nav>
-      {!isWidth768 ? <NavigationMenuDesktop /> : <NavigationMenuMobile />}
+      {!isMatches768 ? <NavigationMenuDesktop /> : <NavigationMenuMobile />}
       <NavigationImageWrapper id="settings">
         <NavigationUserImage src={user?.avatar} />
       </NavigationImageWrapper>
       <StyledTooltip
         anchorSelect="#settings"
         clickable
-        place={isWidth768 ? "bottom" : "right"}
+        place={isMatches768 ? "bottom" : "right"}
       >
         <TooltipMenu>
           <TooltipItem>

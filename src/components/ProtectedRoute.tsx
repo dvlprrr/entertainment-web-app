@@ -3,7 +3,7 @@
 import { ReactNode, useEffect } from "react"
 import { Navigate, Outlet } from "react-router-dom"
 import { checkAuth } from "../features/users-slice"
-import { useAppDispatch } from "../redux-toolkit"
+import { useAppDispatch } from "../redux-hooks"
 
 interface ProtectedRouteProps {
   children?: ReactNode

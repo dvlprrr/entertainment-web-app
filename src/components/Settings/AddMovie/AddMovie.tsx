@@ -8,9 +8,10 @@ import {
   OutlinedInput,
   Select,
 } from "@mui/material"
-import { useActionsWithMovies } from "../../../hooks/useActionsWithMovies"
+import { useActionsWithMovies } from "../hooks/useActionsWithMovies"
 import { useGetFilmTypes } from "../hooks/useGetFilmTypes"
 import { useGetGenres } from "../hooks/useGetGenres"
+import { useGetAgeRatings } from "../hooks/userGetAgeRatings"
 import {
   AddMovieForm,
   AddMovieInfo,
@@ -37,8 +38,9 @@ export function AddMovie() {
   } = useActionsWithMovies()
   const { data: filmTypes } = useGetFilmTypes()
   const { data: genres } = useGetGenres()
-
+  const { data: ageRatings } = useGetAgeRatings()
   const date = new Date()
+  console.log(age)
   return (
     <AddMovieWrapper>
       <AddMovieForm onSubmit={handleSubmit(onSubmit)}>
@@ -101,11 +103,11 @@ export function AddMovie() {
               label="Age"
               onChange={handleAgeChange}
             >
-              <MenuItem value="G">G</MenuItem>
-              <MenuItem value="PG">PG</MenuItem>
-              <MenuItem value="PG-13">PG-13</MenuItem>
-              <MenuItem value="R">R</MenuItem>
-              <MenuItem value="R">NC-17</MenuItem>
+              {ageRatings?.map((ageRating) => (
+                <MenuItem key={ageRating.id} value={ageRating.id}>
+                  {ageRating.name}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
           <FormControl sx={styleFormControll} fullWidth>
