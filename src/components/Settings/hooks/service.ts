@@ -1,5 +1,6 @@
 import { FilmTypes } from "../../../types/FilmTypes"
 import { Genres } from "../../../types/Genres"
+import { Movie } from "../../../types/Movie"
 import { axiosInstance } from "../../../utils/axiosinstance"
 
 type getFilmTypesT = {
@@ -36,3 +37,6 @@ export const createFilm = (data: MovieToSend) =>
 
 export const getAgeRatings = (): Promise<getAgeRatingT> =>
   axiosInstance.get("/age-rating")
+
+export const getMostPopularFilm = (): Promise<{ data: Movie }> =>
+  axiosInstance.get("/favourite-movie/popular")

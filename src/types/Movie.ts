@@ -5,4 +5,5 @@ export type Movie = {
   year: number
   filmType: string
   ageRating: string
+  genres: string[]
 }

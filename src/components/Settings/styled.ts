@@ -83,14 +83,24 @@ export const DashboardWrapper = styled.div`
 
 export const DashboardInfo = styled.div`
   background-color: #161d2f;
-  width: fit-content;
   padding: 30px 20px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  width: 33%;
+  width: 90%;
+`
+export const DashboardInfoMovie = styled.div`
+  background-color: #161d2f;
+  padding: 30px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
 `
 
 export const DashboardInfoContent = styled.div`
@@ -98,6 +108,10 @@ export const DashboardInfoContent = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 5px;
+`
+
+export const DashboardInfoContentMovie = styled.div`
+  width: 310px;
 `
 
 export const DashboardInfoTitle = styled.p`
@@ -112,8 +126,13 @@ export const DashboardInfoAmount = styled.p`
 `
 
 export const DashboardInfoWrapper = styled.div`
-  display: flex;
+  display: grid;
   gap: 20px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "users film"
+    "online film";
 `
 
 export const AddMovieWrapper = styled.div`

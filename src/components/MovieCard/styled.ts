@@ -98,6 +98,7 @@ export const RecomendedCardMovieWrapper = styled.div<{ url: string }>`
   cursor: pointer;
   border-radius: 8px;
   width: 100%;
+  max-width: 308px;
   height: 210px;
   background-repeat: no-repeat;
   background-size: cover;
