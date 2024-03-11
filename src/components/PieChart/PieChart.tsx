@@ -8,12 +8,14 @@ Chart.register(ArcElement, Tooltip, Legend)
 
 export function PieChart() {
   const genres = useAppSelector(selectGenres)
+  const chartData = genres?.map((genre) => genre.count)
+  const chartLabels = genres?.map((genre) => genre.name)
   const data = {
-    labels: genres?.map((genre) => genre.name),
+    labels: chartLabels,
     datasets: [
       {
         label: "№ of Votes",
-        data: [12, 19, 3, 5, 2, 3, 12, 20, 8],
+        data: chartData,
         backgroundColor: genres?.map(() => generateRandomColor()),
         borderWidth: 1,
       },

@@ -9,9 +9,9 @@ import style from "./TrendingList.module.css"
 import { TrendingTitle, WrapperTrending } from "./styled"
 
 export function TrendingList() {
-  const isWidth426 = useMediaQuery({ query: "(max-width: 426px)" })
+  const isMatches426 = useMediaQuery({ query: "(max-width: 426px)" })
 
-  const swiperSpaceBetween = isWidth426 ? 15 : 40
+  const swiperSpaceBetween = isMatches426 ? 15 : 40
 
   return (
     <WrapperTrending>
@@ -25,15 +25,7 @@ export function TrendingList() {
         modules={[FreeMode]}
       >
         <SwiperSlide className={style.swiperSlide}>
-          <TrendingCard
-          // title={item?.title}
-          // url={item?.url}
-          // year={item?.year}
-          // category={item?.category}
-          // rating={item?.rating}
-          // isBookmarked={item?.isBookmarked}
-          // isTrending={item?.isTrending}
-          />
+          <TrendingCard />
         </SwiperSlide>
       </Swiper>
     </WrapperTrending>

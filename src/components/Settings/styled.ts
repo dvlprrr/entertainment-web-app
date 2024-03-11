@@ -89,7 +89,7 @@ export const DashboardWrapper = styled.div`
   margin: 20px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
 `
 
 export const DashboardInfo = styled.div`
@@ -100,7 +100,8 @@ export const DashboardInfo = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
-  width: 90%;
+  width: 100%;
+  box-sizing: border-box;
 `
 export const DashboardInfoMovie = styled.div`
   background-color: #161d2f;
@@ -111,7 +112,8 @@ export const DashboardInfoMovie = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   gap: 20px;
-  width: 90%;
+  width: 100%;
+  box-sizing: border-box;
 `
 
 export const DashboardInfoGenres = styled.div`
@@ -123,7 +125,8 @@ export const DashboardInfoGenres = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   gap: 20px;
-  width: 90%;
+  width: 100%;
+  box-sizing: border-box;
 `
 
 export const DashboardGenre = styled.p<{ place: number }>`
@@ -170,10 +173,8 @@ export const DashboardInfoAmount = styled.p`
 `
 
 export const DashboardInfoWrapper = styled.div`
-  display: flex;
-  gap: 20px;
   display: grid;
-  gap: 30px;
+  gap: 20px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
@@ -255,15 +256,15 @@ export const SubmitButton = styled.button`
 
 export const ChartsWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 `
 
 export const LineChartWrapper = styled.div`
-  width: 65%;
+  width: 55%;
 `
 
 export const PieChartWrapper = styled.div`
-  width: 33%;
+  width: 25%;
 `
 
 export const ChartTitle = styled.h2`

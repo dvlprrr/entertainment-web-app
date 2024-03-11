@@ -44,7 +44,7 @@ export const TrendingCardWrapper = styled.div<{ url: string }>`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px;
   }
 
   &:hover {

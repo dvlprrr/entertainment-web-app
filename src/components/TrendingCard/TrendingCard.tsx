@@ -15,9 +15,13 @@ import {
 } from "./styled"
 
 export function TrendingCard() {
+  const onClick = () => {
+    // toggleFavourite(id)
+    console.log("click в трендах")
+  }
   return (
     <TrendingCardWrapper url="asas">
-      <FavouriteMovieIcon />
+      <FavouriteMovieIcon onClick={onClick} />
       <TrendingPlay>
         <TrendingPlayIcon src={playIcon} alt="play" />
         <TrendingPlayText>Play</TrendingPlayText>

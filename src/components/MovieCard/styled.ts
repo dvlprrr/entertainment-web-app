@@ -118,6 +118,7 @@ export const RecomendedCardMovieWrapper = styled.div<{ url: string }>`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease;
+    border-radius: 8px;
   }
 
   &:hover {
