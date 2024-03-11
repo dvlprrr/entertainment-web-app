@@ -1,4 +1,6 @@
+import { toggleFavourite } from "../../hooks/service"
 import playIcon from "../../images/playIcon.svg"
+import { Movie } from "../../types/Movie"
 
 import { FavouriteMovieIcon } from "../FavouriteMovieIcon/FavouriteMovieIcon"
 import {
@@ -14,13 +16,19 @@ import {
   TrendingPlayText,
 } from "./styled"
 
-export function TrendingCard() {
+export function TrendingCard({
+  id,
+  title,
+  url,
+  year,
+  ageRating,
+  filmType,
+}: Omit<Movie, "genres">) {
   const onClick = () => {
-    // toggleFavourite(id)
-    console.log("click в трендах")
+    toggleFavourite(id)
   }
   return (
-    <TrendingCardWrapper url="asas">
+    <TrendingCardWrapper url={url}>
       <FavouriteMovieIcon onClick={onClick} />
       <TrendingPlay>
         <TrendingPlayIcon src={playIcon} alt="play" />
@@ -28,14 +36,14 @@ export function TrendingCard() {
       </TrendingPlay>
       <TrendingInfoWrapper>
         <TrendingInfoDetails>
-          <TrendingInfoText>2023</TrendingInfoText>
+          <TrendingInfoText>{year}</TrendingInfoText>
           <TrendingInfoDot />
           <TrendingMovieIcon />
-          <TrendingInfoText>asd</TrendingInfoText>
+          <TrendingInfoText>{filmType}</TrendingInfoText>
           <TrendingInfoDot />
-          <TrendingInfoText>afafa</TrendingInfoText>
+          <TrendingInfoText>{ageRating}</TrendingInfoText>
         </TrendingInfoDetails>
-        <TrendingMovieTitle>afas</TrendingMovieTitle>
+        <TrendingMovieTitle>{title}</TrendingMovieTitle>
       </TrendingInfoWrapper>
     </TrendingCardWrapper>
   )

@@ -6,13 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react"
 
 import { TrendingCard } from "../TrendingCard/TrendingCard"
 import style from "./TrendingList.module.css"
+import { useGetTrendingMovies } from "./hooks/useGetTrendingMovies"
 import { TrendingTitle, WrapperTrending } from "./styled"
 
 export function TrendingList() {
   const isMatches426 = useMediaQuery({ query: "(max-width: 426px)" })
-
   const swiperSpaceBetween = isMatches426 ? 15 : 40
-
+  const { data: movies } = useGetTrendingMovies()
   return (
     <WrapperTrending>
       <TrendingTitle>Trending</TrendingTitle>
@@ -24,9 +24,12 @@ export function TrendingList() {
         className={style.swiperTrending}
         modules={[FreeMode]}
       >
-        <SwiperSlide className={style.swiperSlide}>
-          <TrendingCard />
-        </SwiperSlide>
+        {movies &&
+          movies.map((movie) => (
+            <SwiperSlide key={movie.id} className={style.swiperSlide}>
+              <TrendingCard {...movie} />
+            </SwiperSlide>
+          ))}
       </Swiper>
     </WrapperTrending>
   )
