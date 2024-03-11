@@ -2,7 +2,7 @@ import { SubmitHandler, useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import logo from "../../images/logo.svg"
 import { useAppDispatch } from "../../redux-hooks"
-import { registerUser } from "../users-slice"
+import { registerUser } from "../users/users-slice"
 import {
   AuthButton,
   AuthContainer,

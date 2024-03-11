@@ -1,12 +1,13 @@
 import { ArcElement, Chart, Legend, Tooltip } from "chart.js"
 import { Pie } from "react-chartjs-2"
+import { selectGenres } from "../../features/genres/genres-selectors"
+import { useAppSelector } from "../../redux-hooks"
 import { generateRandomColor } from "../../utils/generateRandomColor"
-import { useGetGenres } from "../Settings/hooks/useGetGenres"
 
 Chart.register(ArcElement, Tooltip, Legend)
 
 export function PieChart() {
-  const { data: genres } = useGetGenres()
+  const genres = useAppSelector(selectGenres)
   const data = {
     labels: genres?.map((genre) => genre.name),
     datasets: [

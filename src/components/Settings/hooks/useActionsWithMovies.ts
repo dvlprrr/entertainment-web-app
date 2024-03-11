@@ -1,14 +1,15 @@
 import type { SelectChangeEvent } from "@mui/material"
 import { useState } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
+import { selectGenres } from "../../../features/genres/genres-selectors"
+import { useAppSelector } from "../../../redux-hooks"
 import { MovieToSend, createFilm } from "./service"
-import { useGetGenres } from "./useGetGenres"
 
 export const useActionsWithMovies = () => {
   const [selectedGenres, setSelectedGenres] = useState<string[]>([])
   const [movieType, setMovieType] = useState("")
   const [age, setAge] = useState("")
-  const { data: genres } = useGetGenres()
+  const genres = useAppSelector(selectGenres)
   const {
     register,
     handleSubmit,

@@ -8,10 +8,11 @@ import {
   OutlinedInput,
   Select,
 } from "@mui/material"
+import { selectAgeRatings } from "../../../features/age_ratings/age_ratings-selector"
+import { selectFilmTypes } from "../../../features/film_types/film_types-selector"
+import { selectGenres } from "../../../features/genres/genres-selectors"
+import { useAppSelector } from "../../../redux-hooks"
 import { useActionsWithMovies } from "../hooks/useActionsWithMovies"
-import { useGetFilmTypes } from "../hooks/useGetFilmTypes"
-import { useGetGenres } from "../hooks/useGetGenres"
-import { useGetAgeRatings } from "../hooks/userGetAgeRatings"
 import {
   AddMovieForm,
   AddMovieInfo,
@@ -36,11 +37,12 @@ export function AddMovie() {
     handleSubmit,
     onSubmit,
   } = useActionsWithMovies()
-  const { data: filmTypes } = useGetFilmTypes()
-  const { data: genres } = useGetGenres()
-  const { data: ageRatings } = useGetAgeRatings()
+  const filmTypes = useAppSelector(selectFilmTypes)
+  const genres = useAppSelector(selectGenres)
+  const ageRatings = useAppSelector(selectAgeRatings)
+
   const date = new Date()
-  console.log(age)
+
   return (
     <AddMovieWrapper>
       <AddMovieForm onSubmit={handleSubmit(onSubmit)}>

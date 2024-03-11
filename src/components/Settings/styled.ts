@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 
@@ -51,6 +52,7 @@ export const SettingsNavigationListWrapper = styled.ul`
 export const SettingsNavigationItem = styled.li`
   cursor: pointer;
   transition: opacity 0.6s;
+  font-size: 20px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -72,8 +74,17 @@ export const SettingsNavigationWrapper = styled.nav`
   position: absolute;
   left: 0;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  box-sizing: border-box;
 `
 
+export const SettingsLogo = styled.img`
+  width: 32px;
+  cursor: pointer;
+`
 export const DashboardWrapper = styled.div`
   margin: 20px;
   display: flex;
@@ -103,6 +114,32 @@ export const DashboardInfoMovie = styled.div`
   width: 90%;
 `
 
+export const DashboardInfoGenres = styled.div`
+  background-color: #161d2f;
+  padding: 30px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+`
+
+export const DashboardGenre = styled.p<{ place: number }>`
+  margin: 5px;
+  font-size: 24px;
+  text-align: start;
+  color: ${({ place }) =>
+    place === 1
+      ? "#FFD700"
+      : place === 2
+        ? "#c0c0c0"
+        : place === 3
+          ? "#D2B48C"
+          : "#ffffff"};
+`
+
 export const DashboardInfoContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -112,6 +149,13 @@ export const DashboardInfoContent = styled.div`
 
 export const DashboardInfoContentMovie = styled.div`
   width: 310px;
+`
+
+export const DashboardInfoGenreContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 `
 
 export const DashboardInfoTitle = styled.p`
@@ -126,13 +170,15 @@ export const DashboardInfoAmount = styled.p`
 `
 
 export const DashboardInfoWrapper = styled.div`
-  display: grid;
+  display: flex;
   gap: 20px;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 1fr;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
-    "users film"
-    "online film";
+    "users genres film film film"
+    "online genres film film film";
 `
 
 export const AddMovieWrapper = styled.div`

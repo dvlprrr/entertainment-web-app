@@ -3,13 +3,18 @@ import { LineChart } from "../../LineCharts/LineChart"
 import { MovieCard } from "../../MovieCard/MovieCard"
 import { PieChart } from "../../PieChart/PieChart"
 import { useGetMostPopularFilm } from "../hooks/useGetMostPopularFilm"
+import { useGetPopularGenres } from "../hooks/useGetPopularGenres"
+
 import {
   ChartTitle,
   ChartsWrapper,
+  DashboardGenre,
   DashboardInfo,
   DashboardInfoAmount,
   DashboardInfoContent,
   DashboardInfoContentMovie,
+  DashboardInfoGenreContent,
+  DashboardInfoGenres,
   DashboardInfoMovie,
   DashboardInfoTitle,
   DashboardInfoWrapper,
@@ -19,8 +24,9 @@ import {
 } from "../styled"
 
 export function Dashboard() {
-  const { data: popular } = useGetMostPopularFilm()
-  console.log(popular)
+  const { data: popularMovie } = useGetMostPopularFilm()
+  const { data: popularGenres } = useGetPopularGenres()
+
   return (
     <DashboardWrapper>
       <DashboardInfoWrapper>
@@ -38,12 +44,22 @@ export function Dashboard() {
             <DashboardInfoAmount>1</DashboardInfoAmount>
           </DashboardInfoContent>
         </DashboardInfo>
+        <DashboardInfoGenres style={{ gridArea: "genres" }}>
+          <DashboardInfoTitle>TOP GENRES</DashboardInfoTitle>
+          <DashboardInfoGenreContent>
+            {popularGenres?.map((genre, index) => (
+              <DashboardGenre place={index + 1}>
+                {`${index + 1}. ${genre}`}
+              </DashboardGenre>
+            ))}
+          </DashboardInfoGenreContent>
+        </DashboardInfoGenres>
         <DashboardInfoMovie style={{ gridArea: "film" }}>
           <DashboardInfoTitle>MOST POPULAR FILM</DashboardInfoTitle>
           <DashboardInfoContentMovie>
-            {popular && (
+            {popularMovie && (
               <MovieCard
-                {...popular}
+                {...popularMovie}
                 url="https://ntm13.ru/wp-content/uploads/2021/04/%D0%94%D0%B5%D0%B2%D1%8F%D1%82%D0%B0%D0%B5%D0%B2-%D1%84%D0%B8%D0%BB%D1%8C%D0%BC-%D0%B3%D0%BE%D1%80%D0%B8%D0%B7%D0%BE%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9-%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80.jpg"
               />
             )}
