@@ -1,8 +1,13 @@
 import { SubmitHandler, useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import logo from "../../images/logo.svg"
+<<<<<<< Updated upstream
 import { useAppDispatch } from "../../redux-toolkit"
 import { loginUser } from "../users-slice"
+=======
+import { useAppDispatch } from "../../redux-hooks"
+import { loginUser } from "../users/users-slice"
+>>>>>>> Stashed changes
 import {
   AuthButton,
   AuthContainer,

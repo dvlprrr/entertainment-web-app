@@ -2,8 +2,13 @@ import { Wrench } from "@phosphor-icons/react"
 import { useCallback } from "react"
 import { useDispatch } from "react-redux"
 import { useMediaQuery } from "react-responsive"
+<<<<<<< Updated upstream
 import { logOut } from "../../features/users-slice"
 import defalutAvatar from "../../images/defalutAvatar.svg"
+=======
+import { selectCurrentUser } from "../../features/users/users-selectors"
+import { logOut } from "../../features/users/users-slice"
+>>>>>>> Stashed changes
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop"
 import { NavigationMenuMobile } from "./NavigationMenuMobile"
 import {

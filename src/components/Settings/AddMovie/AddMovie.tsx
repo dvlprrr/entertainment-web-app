@@ -8,9 +8,17 @@ import {
   OutlinedInput,
   Select,
 } from "@mui/material"
+<<<<<<< Updated upstream
 import { useActionsWithMovies } from "../../../hooks/useActionsWithMovies"
 import { useGetFilmTypes } from "../hooks/useGetFilmTypes"
 import { useGetGenres } from "../hooks/useGetGenres"
+=======
+import { selectAgeRatings } from "../../../features/age_ratings/age_ratings-selector"
+import { selectFilmTypes } from "../../../features/film_types/film_types-selector"
+import { selectGenres } from "../../../features/genres/genres-selectors"
+import { useAppSelector } from "../../../redux-hooks"
+import { useActionsWithMovies } from "../hooks/useActionsWithMovies"
+>>>>>>> Stashed changes
 import {
   AddMovieForm,
   AddMovieInfo,
@@ -35,8 +43,14 @@ export function AddMovie() {
     handleSubmit,
     onSubmit,
   } = useActionsWithMovies()
+<<<<<<< Updated upstream
   const { data: filmTypes } = useGetFilmTypes()
   const { data: genres } = useGetGenres()
+=======
+  const filmTypes = useAppSelector(selectFilmTypes)
+  const genres = useAppSelector(selectGenres)
+  const ageRatings = useAppSelector(selectAgeRatings)
+>>>>>>> Stashed changes
 
   const date = new Date()
   return (

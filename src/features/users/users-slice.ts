@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
-import { Extra } from "../types/Extra"
-import { Status } from "../types/Status"
-import { User } from "../types/User"
+import { Extra } from "../../types/Extra"
+import { Status } from "../../types/Status"
+import { User } from "../../types/User"
 
 type AuthUserType = {
   email: string
