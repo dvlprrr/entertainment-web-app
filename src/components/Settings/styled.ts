@@ -174,11 +174,11 @@ export const DashboardInfoWrapper = styled.div`
   gap: 20px;
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
-    "users genres film film film"
-    "online genres film film film";
+    "users genres film film"
+    "online genres film film";
 `
 
 export const AddMovieWrapper = styled.div`
