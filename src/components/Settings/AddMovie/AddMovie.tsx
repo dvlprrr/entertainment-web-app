@@ -18,6 +18,7 @@ import {
   AddMovieInfo,
   AddMovieInput,
   AddMovieLabel,
+  AddMovieTrendingWrapper,
   AddMovieWrapper,
   ErrorMessage,
   SubmitButton,
@@ -45,7 +46,9 @@ export function AddMovie() {
 
   return (
     <AddMovieWrapper>
+      <AddMovieTrendingWrapper>sa</AddMovieTrendingWrapper>
       <AddMovieForm onSubmit={handleSubmit(onSubmit)}>
+        Add new movie
         <AddMovieLabel>
           Title
           <AddMovieInput

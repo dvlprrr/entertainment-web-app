@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
-export const MoviesWrapper = styled.section`
+export const HomeMoviesWrapper = styled.section`
   width: 100%;
 `
 
-export const MoviesListWrapper = styled.div`
+export const HomeMoviesListWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
@@ -22,7 +22,7 @@ export const MoviesListWrapper = styled.div`
   }
 `
 
-export const MoviesTitle = styled.h2`
+export const HomeMoviesTitle = styled.h2`
   margin: 0 0 35px;
   font-size: 32px;
   font-weight: 300;

@@ -2,6 +2,9 @@ import styled from "styled-components"
 
 export const FavouritesWrapper = styled.section`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 `
 
 export const FavouritesTitle = styled.h2`
@@ -35,4 +38,9 @@ export const FavouritesListWrapper = styled.div`
   @media (max-width: 426px) {
     gap: 15px;
   }
+`
+export const FavouritesContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 `

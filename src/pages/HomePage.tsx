@@ -1,4 +1,4 @@
-import { MoviesList } from "../components/MoviesList/MoviesList"
+import { HomeMoviesList } from "../components/HomeMoviesList/HomeMoviesList"
 import { TrendingList } from "../components/TrendingList/TrendingList"
 import { HomePageWrapper } from "./styled"
 
@@ -6,7 +6,7 @@ export function HomePage() {
   return (
     <HomePageWrapper>
       <TrendingList />
-      <MoviesList />
+      <HomeMoviesList />
     </HomePageWrapper>
   )
 }

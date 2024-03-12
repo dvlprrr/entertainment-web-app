@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-fragments */
-import { Fragment } from "react"
 import { useGetFavouriteMoviesForCurrentUser } from "../../pages/hooks/useGetFavouriteMoviesForCurrentUser"
 import { Movie } from "../../types/Movie"
 import { MovieCard } from "../MovieCard/MovieCard"
@@ -16,14 +15,14 @@ export function FavouritesList() {
     <FavouritesWrapper>
       {favourites &&
         Object?.keys(favourites)?.map((key: string) => (
-          <Fragment key={key}>
+          <div key={key}>
             <FavouritesTitle>{key}</FavouritesTitle>
             <FavouritesListWrapper>
               {favourites[key].map((item: Movie) => (
                 <MovieCard key={item.id} {...item} />
               ))}
             </FavouritesListWrapper>
-          </Fragment>
+          </div>
         ))}
     </FavouritesWrapper>
   )

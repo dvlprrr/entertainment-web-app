@@ -1,10 +1,10 @@
-import { MoviesList } from "../components/MoviesList/MoviesList"
+import { TvSeriesList } from "../components/TvSeriesList/TvSeriesList"
 import { TVSeriesPageWrapper } from "./styled"
 
 export function TVSeriesPage() {
   return (
     <TVSeriesPageWrapper>
-      <MoviesList />
+      <TvSeriesList />
     </TVSeriesPageWrapper>
   )
 }
