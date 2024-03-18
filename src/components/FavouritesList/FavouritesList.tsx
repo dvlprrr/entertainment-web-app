@@ -16,7 +16,7 @@ export function FavouritesList() {
       {favourites &&
         Object?.keys(favourites)?.map((key: string) => (
           <div key={key}>
-            <FavouritesTitle>{key}</FavouritesTitle>
+            <FavouritesTitle>{`Bookmarked ${key}`}</FavouritesTitle>
             <FavouritesListWrapper>
               {favourites[key].map((item: Movie) => (
                 <MovieCard key={item.id} {...item} />
