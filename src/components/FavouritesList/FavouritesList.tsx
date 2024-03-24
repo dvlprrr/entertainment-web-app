@@ -21,7 +21,6 @@ export function FavouritesList() {
   useEffect(() => {
     refetch()
   }, [searchValue, refetch])
-  console.log(favourites)
   if (
     favourites &&
     Object.values(favourites).length === 0 &&
