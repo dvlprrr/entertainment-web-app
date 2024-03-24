@@ -275,3 +275,39 @@ export const ChartTitle = styled.h2`
 `
 
 export const AddMovieTrendingWrapper = styled.div``
+
+export const EditProfileWrapper = styled.div`
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  height: 90vh;
+`
+
+export const EditProfileForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  align-self: center;
+  width: 60%;
+`
+
+export const EditProfilelabel = styled.label`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+`
+
+export const EditProfileInput = styled.input`
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  background-color: #161d2f;
+  border: none;
+  border-radius: 8px;
+  color: currentColor;
+  padding: 10px;
+`
+
+export const EditProfileButton = styled.button``

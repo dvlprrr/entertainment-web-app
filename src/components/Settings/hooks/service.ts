@@ -11,6 +11,11 @@ export type MovieToSend = {
   genre: number[]
 }
 
+export type UpdatedUser = {
+  email: string
+  avatar: string
+}
+
 export const createFilm = (data: MovieToSend) =>
   axiosInstance.post("/movies", data)
 
@@ -19,3 +24,6 @@ export const getMostPopularFilm = (): Promise<{ data: Movie }> =>
 
 export const getPopularGenres = (): Promise<{ data: Genres["name"][] }> =>
   axiosInstance.get("/genre-film/popular")
+
+export const updateUser = (data: UpdatedUser) =>
+  axiosInstance.patch("/user", data)

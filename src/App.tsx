@@ -4,6 +4,7 @@ import { PageLayout } from "./components/PageLayout/PageLayout"
 import { ProtectedRoute } from "./components/ProtectedRoute"
 import { AddMovie } from "./components/Settings/AddMovie/AddMovie"
 import { Dashboard } from "./components/Settings/Dashboard/Dashboard"
+import { EditProfile } from "./components/Settings/EditProfile/EditProfile"
 import { getAgeRatings } from "./features/age_ratings/age_ratings-slice"
 import { Login } from "./features/auth/Login"
 import { Registration } from "./features/auth/Registration"
@@ -39,7 +40,7 @@ function App() {
           <Route path="settings" element={<SettingsPage />}>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="add-movies" element={<AddMovie />} />
-            <Route path="edit" />
+            <Route path="edit" element={<EditProfile />} />
           </Route>
           <Route path="/sign-up" element={<Registration />} />
           <Route path="/sign-in" element={<Login />} />
