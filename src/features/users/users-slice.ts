@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-expressions */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 import { Extra } from "../../types/Extra"
 import { Status } from "../../types/Status"
 import { User } from "../../types/User"
+import { axiosInstance } from "../../utils/axiosinstance"
 
 type AuthUserType = {
   email: string
@@ -77,6 +79,19 @@ export const checkAuth = createAsyncThunk<
   }
 })
 
+export const toggleFavourite = createAsyncThunk<
+  number,
+  { movieId: number },
+  { extra: Extra; rejectWithValue: string }
+>("@@user/favourite", async (movieId, { extra: { api }, rejectWithValue }) => {
+  try {
+    const res = await axiosInstance.post(api.TOGGLE_FAVOURITE_MOVIES, movieId)
+    return res.data
+  } catch (error) {
+    return rejectWithValue(error)
+  }
+})
+
 export const UserSlice = createSlice({
   name: "@@user",
   initialState,
@@ -105,6 +120,20 @@ export const UserSlice = createSlice({
       })
       .addCase(checkAuth.fulfilled, (state, { payload }) => {
         state.user = payload
+      })
+      .addCase(toggleFavourite.fulfilled, (state, { payload }) => {
+        if (payload && state.user) {
+          const userExistSelectedFilm =
+            state.user.favourite_movies.includes(payload)
+
+          if (userExistSelectedFilm) {
+            state.user.favourite_movies = state.user.favourite_movies.filter(
+              (movieId) => movieId !== payload,
+            )
+          } else {
+            state.user.favourite_movies.push(payload)
+          }
+        }
       })
   },
 })

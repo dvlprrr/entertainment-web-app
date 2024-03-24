@@ -3,4 +3,5 @@ export type User = {
   id: number
   avatar: string
   role_id: number
+  favourite_movies: number[]
 }

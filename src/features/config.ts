@@ -5,3 +5,4 @@ export const CHECK_JWT = `${BASE_URL}/auth/me`
 export const FETCH_GENRES = `${BASE_URL}/genre-film`
 export const FETCH_FILM_TYPES = `${BASE_URL}/film-type`
 export const FETCH_AGE_RATINGS = `${BASE_URL}/age-rating`
+export const TOGGLE_FAVOURITE_MOVIES = `${BASE_URL}/favourite-movie`

@@ -1,6 +1,11 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { useQueryClient } from "react-query"
+import { useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
-import { toggleFavourite } from "../../hooks/service"
+import { selectCurrentUser } from "../../features/users/users-selectors"
+import { toggleFavourite } from "../../features/users/users-slice"
 import playIcon from "../../images/playIcon.svg"
+import { useAppDispatch } from "../../redux-hooks"
 import { Movie } from "../../types/Movie"
 import { FavouriteMovieIcon } from "../FavouriteMovieIcon/FavouriteMovieIcon"
 import {
@@ -23,15 +28,26 @@ export function MovieCard({
   filmType,
   id,
 }: Movie) {
-  const isWidth768 = useMediaQuery({ query: "(max-width: 768px)" })
-  const onClick = () => {
-    toggleFavourite(id)
+  const isMatches768 = useMediaQuery({ query: "(max-width: 768px)" })
+
+  const user = useSelector(selectCurrentUser)
+  const dispatch = useAppDispatch()
+
+  const queryClient = useQueryClient()
+  const handleToggleFavourite = (movieId: number) => {
+    dispatch(toggleFavourite({ movieId }))
+      .unwrap()
+      .then(() => queryClient.invalidateQueries(["favourite"]))
   }
+  const isFavouriteMovie = user?.favourite_movies.includes(id)
   return (
     <div>
       <RecomendedCardMovieWrapper url={url}>
-        <FavouriteMovieIcon onClick={onClick} />
-        {!isWidth768 && (
+        <FavouriteMovieIcon
+          isBookmarked={isFavouriteMovie || false}
+          onClick={() => handleToggleFavourite(id)}
+        />
+        {!isMatches768 && (
           <RecomendedPlay>
             <RecomendedPlayIcon src={playIcon} alt="play" />
             <RecomendedPlayText>Play</RecomendedPlayText>
