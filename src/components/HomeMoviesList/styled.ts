@@ -22,10 +22,12 @@ export const HomeMoviesListWrapper = styled.div`
   }
 `
 
-export const HomeMoviesTitle = styled.h2`
+export const HomeMoviesTitle = styled.h2<{ searchValue: boolean }>`
   margin: 0 0 35px;
   font-size: 32px;
   font-weight: 300;
+
+  margin-top: ${({ searchValue }) => searchValue && "35px"};
 
   @media (max-width: 768px) {
     margin-bottom: 25px;

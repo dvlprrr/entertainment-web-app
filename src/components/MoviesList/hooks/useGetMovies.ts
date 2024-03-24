@@ -1,14 +1,18 @@
 import { useQuery } from "react-query"
 import { getMovies } from "./service"
 
-export function useGetMovies() {
-  const { data, error } = useQuery(["movies"], async () => getMovies(), {
-    retry: false,
-  })
+export function useGetMovies(searchValue: string) {
+  const { data, error, refetch } = useQuery(
+    ["movies"],
+    async () => getMovies(searchValue),
+    {
+      retry: false,
+    },
+  )
 
   if (error) {
     console.error("Ошибка при загрузке типов фильмов:", error)
   }
 
-  return { data: data?.data }
+  return { data: data?.data, refetch }
 }

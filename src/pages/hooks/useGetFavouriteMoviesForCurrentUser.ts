@@ -1,10 +1,10 @@
 import { useQuery } from "react-query"
 import { getFavouriteMoviesForCurrentUser } from "./service"
 
-export function useGetFavouriteMoviesForCurrentUser() {
-  const { data, error } = useQuery(
+export function useGetFavouriteMoviesForCurrentUser(searchValue: string) {
+  const { data, error, refetch } = useQuery(
     ["favourite"],
-    async () => getFavouriteMoviesForCurrentUser(),
+    async () => getFavouriteMoviesForCurrentUser(searchValue),
     {
       retry: false,
     },
@@ -14,5 +14,5 @@ export function useGetFavouriteMoviesForCurrentUser() {
     console.error("Ошибка при загрузке типов фильмов:", error)
   }
 
-  return { favourites: data?.data.favourites_movies }
+  return { favourites: data?.data.favourites_movies, refetch }
 }

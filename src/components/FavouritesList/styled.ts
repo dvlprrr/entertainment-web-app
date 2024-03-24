@@ -44,3 +44,8 @@ export const FavouritesContent = styled.div`
   flex-direction: column;
   gap: 40px;
 `
+export const EmptyListTitle = styled.h3`
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0;
+`

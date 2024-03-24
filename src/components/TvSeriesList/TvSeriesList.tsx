@@ -1,12 +1,24 @@
+import { useEffect } from "react"
+import { useSearchParams } from "react-router-dom"
 import { MovieCard } from "../MovieCard/MovieCard"
 import { useGetTvSeries } from "./hooks/useGetTvSeries"
 import { TvSeriesListWrapper, TvSeriesTitle, TvSeriesWrapper } from "./styled"
 
 export function TvSeriesList() {
-  const { data: tvSeries } = useGetTvSeries()
+  const [params] = useSearchParams()
+  const searchValue = params.get("search")
+  const { data: tvSeries, refetch } = useGetTvSeries(searchValue || "")
+  useEffect(() => {
+    refetch()
+  }, [searchValue, refetch])
+
   return (
     <TvSeriesWrapper>
-      <TvSeriesTitle>TV Series</TvSeriesTitle>
+      <TvSeriesTitle>
+        {searchValue
+          ? `Found ${tvSeries?.length} results for ‘${searchValue}’`
+          : "TV Series"}
+      </TvSeriesTitle>
       <TvSeriesListWrapper>
         {tvSeries?.map((movie) => <MovieCard {...movie} />)}
       </TvSeriesListWrapper>

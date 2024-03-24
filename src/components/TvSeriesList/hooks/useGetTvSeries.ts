@@ -1,14 +1,18 @@
 import { useQuery } from "react-query"
 import { getTvSeries } from "./service"
 
-export function useGetTvSeries() {
-  const { data, error } = useQuery(["tv-series"], async () => getTvSeries(), {
-    retry: false,
-  })
+export function useGetTvSeries(searchValue: string) {
+  const { data, error, refetch } = useQuery(
+    ["tv-series"],
+    async () => getTvSeries(searchValue),
+    {
+      retry: false,
+    },
+  )
 
   if (error) {
     console.error("Ошибка при загрузке типов фильмов:", error)
   }
 
-  return { data: data?.data }
+  return { data: data?.data, refetch }
 }
