@@ -1,9 +1,8 @@
 import { Wrench } from "@phosphor-icons/react"
-import { useCallback } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { useMediaQuery } from "react-responsive"
-import { selectCurrentUser } from "../../features/users/users-selectors"
 import { logOut } from "../../features/users/users-slice"
+import { useCurrentUser } from "../../hooks/useCurrentUser"
 import { NavigationMenuDesktop } from "./NavigationMenuDesktop"
 import { NavigationMenuMobile } from "./NavigationMenuMobile"
 import {
@@ -20,15 +19,15 @@ import {
 export function NavigationMenu() {
   const isMatches768 = useMediaQuery({ query: "(max-width: 768px)" })
   const dispatch = useDispatch()
-  const user = useSelector(selectCurrentUser)
-  const handleLogout = useCallback(() => {
+  const currentUser = useCurrentUser()
+  const handleLogout = () => {
     dispatch(logOut())
-  }, [dispatch])
+  }
   return (
     <Nav>
       {!isMatches768 ? <NavigationMenuDesktop /> : <NavigationMenuMobile />}
       <NavigationImageWrapper id="settings">
-        <NavigationUserImage src={user?.avatar} />
+        <NavigationUserImage src={currentUser?.avatar} />
       </NavigationImageWrapper>
       <StyledTooltip
         anchorSelect="#settings"

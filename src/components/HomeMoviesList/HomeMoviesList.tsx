@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
-import { useGetAllMovies } from "../../pages/hooks/useGetAllMovies"
-import { MovieCard } from "../MovieCard/MovieCard"
+import { FilmCard } from "../FilmCard/FilmCard"
+import { useGetAllMovies } from "./hooks/useGetAllMovies"
 import {
   HomeMoviesListWrapper,
   HomeMoviesTitle,
@@ -23,7 +23,7 @@ export function HomeMoviesList() {
           : "Recommended for you"}
       </HomeMoviesTitle>
       <HomeMoviesListWrapper>
-        {movies?.map((movie) => <MovieCard key={movie.id} {...movie} />)}
+        {movies?.map((movie) => <FilmCard key={movie.id} {...movie} />)}
       </HomeMoviesListWrapper>
     </HomeMoviesWrapper>
   )

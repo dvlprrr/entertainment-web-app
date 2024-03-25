@@ -1,5 +1,5 @@
-import type { SelectChangeEvent } from "@mui/material"
-import { useState } from "react"
+import { SelectChangeEvent } from "@mui/material"
+import { useEffect, useState } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { selectGenres } from "../../../features/genres/genres-selectors"
 import { useAppSelector } from "../../../redux-hooks"
@@ -45,6 +45,11 @@ export const useActionsWithMovies = () => {
 
     return selectedGenresIds.filter((id) => id !== 0)
   }
+  useEffect(() => {
+    setMovieType("")
+    setAge("")
+    setSelectedGenres([])
+  }, [reset])
 
   const onSubmit: SubmitHandler<MovieToSend> = (data) => {
     data.genre = selectGenresIds()
@@ -53,9 +58,6 @@ export const useActionsWithMovies = () => {
     createFilm(data)
       .then(() => {
         reset()
-        setMovieType("")
-        setAge("")
-        setSelectedGenres([])
       })
       .catch((error) => {
         console.error(error.message)

@@ -1,11 +1,11 @@
 import styled from "styled-components"
 import { ReactComponent as Favourite } from "../../images/favouriteMovie.svg"
 
-export const FavouriteMovie = styled(Favourite)`
+export const BookmarkedMovie = styled(Favourite)`
   cursor: pointer;
 `
 
-export const FavouriteMovieWrapper = styled.div<{ isBookmarked: boolean }>`
+export const BookmarkedMovieWrapper = styled.div<{ isBookmarked: boolean }>`
   align-self: flex-end;
   border-radius: 32px;
   background-color: #161d2f;
@@ -18,7 +18,7 @@ export const FavouriteMovieWrapper = styled.div<{ isBookmarked: boolean }>`
 
   ${(props) =>
     props.isBookmarked
-      ? `${FavouriteMovie} {
+      ? `${BookmarkedMovie} {
       path {
         transition: 0.3s ease;
         fill: #ffffff;
@@ -26,7 +26,7 @@ export const FavouriteMovieWrapper = styled.div<{ isBookmarked: boolean }>`
     }
 
     &:hover {
-      ${FavouriteMovie} {
+      ${BookmarkedMovie} {
         path {
           fill: #161d2f;
         }
@@ -36,7 +36,7 @@ export const FavouriteMovieWrapper = styled.div<{ isBookmarked: boolean }>`
       : ` &:hover {
         transition: 0.3s ease;
         background-color: #ffffff;
-        ${FavouriteMovie} {
+        ${BookmarkedMovie} {
           path {
             transition: 0.3s ease;
             stroke: #161d2f;

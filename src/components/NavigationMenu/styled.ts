@@ -72,12 +72,6 @@ export const WrapperNavigation = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 75px;
-
-  @media (max-width: 768px) {
-    flex-direction: row;
-    width: 65%;
-    gap: 0;
-  }
 `
 
 export const NavigationLogo = styled.img`

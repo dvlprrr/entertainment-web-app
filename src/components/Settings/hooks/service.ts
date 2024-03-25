@@ -1,5 +1,5 @@
+import { Film } from "../../../types/Film"
 import { Genres } from "../../../types/Genres"
-import { Movie } from "../../../types/Movie"
 import { axiosInstance } from "../../../utils/axiosinstance"
 
 export type MovieToSend = {
@@ -19,7 +19,7 @@ export type UpdatedUser = {
 export const createFilm = (data: MovieToSend) =>
   axiosInstance.post("/movies", data)
 
-export const getMostPopularFilm = (): Promise<{ data: Movie }> =>
+export const getMostPopularFilm = (): Promise<{ data: Film }> =>
   axiosInstance.get("/favourite-movie/popular-movie")
 
 export const getPopularGenres = (): Promise<{ data: Genres["name"][] }> =>
@@ -27,3 +27,5 @@ export const getPopularGenres = (): Promise<{ data: Genres["name"][] }> =>
 
 export const updateUser = (data: UpdatedUser) =>
   axiosInstance.patch("/user", data)
+export const getTotalUsers = (): Promise<{ data: number }> =>
+  axiosInstance.get("user/count")

@@ -5,13 +5,18 @@ import { FreeMode } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import { TrendingCard } from "../TrendingCard/TrendingCard"
-import style from "./TrendingList.module.css"
+import style from "./Swiper.module.css"
 import { useGetTrendingMovies } from "./hooks/useGetTrendingMovies"
 import { TrendingTitle, WrapperTrending } from "./styled"
 
+const MOBILE_SPACE_BETWEEN = 15
+const DESKTOP_SPACE_BETWEEN = 40
+
 export function TrendingList() {
   const isMatches426 = useMediaQuery({ query: "(max-width: 426px)" })
-  const swiperSpaceBetween = isMatches426 ? 15 : 40
+  const swiperSpaceBetween = isMatches426
+    ? MOBILE_SPACE_BETWEEN
+    : DESKTOP_SPACE_BETWEEN
   const { data: movies } = useGetTrendingMovies()
   return (
     <WrapperTrending>

@@ -11,7 +11,7 @@ export function useGetMostPopularFilm() {
   )
 
   if (error) {
-    console.error("Ошибка при загрузке типов фильмов:", error)
+    console.error("Ошибка при загрузке самого популярного фильма:", error)
   }
 
   return { data: data?.data }

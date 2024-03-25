@@ -1,7 +1,6 @@
 /* eslint-disable quotes */
 import {
   Checkbox,
-  FormControl,
   InputLabel,
   ListItemText,
   MenuItem,
@@ -12,6 +11,7 @@ import { selectAgeRatings } from "../../../features/age_ratings/age_ratings-sele
 import { selectFilmTypes } from "../../../features/film_types/film_types-selector"
 import { selectGenres } from "../../../features/genres/genres-selectors"
 import { useAppSelector } from "../../../redux-hooks"
+import { CustomFormControl } from "../../CustomFormControl/CustomFormControl"
 import { useActionsWithMovies } from "../hooks/useActionsWithMovies"
 import {
   AddMovieForm,
@@ -22,8 +22,9 @@ import {
   AddMovieWrapper,
   ErrorMessage,
   SubmitButton,
-  styleFormControll,
 } from "../styled"
+
+const date = new Date()
 
 export function AddMovie() {
   const {
@@ -41,8 +42,6 @@ export function AddMovie() {
   const filmTypes = useAppSelector(selectFilmTypes)
   const genres = useAppSelector(selectGenres)
   const ageRatings = useAppSelector(selectAgeRatings)
-
-  const date = new Date()
 
   return (
     <AddMovieWrapper>
@@ -100,7 +99,7 @@ export function AddMovie() {
             />
             {errors.year && <ErrorMessage>{errors.year.message}</ErrorMessage>}
           </AddMovieLabel>
-          <FormControl sx={styleFormControll} fullWidth>
+          <CustomFormControl>
             <InputLabel id="age-label">Age</InputLabel>
             <Select
               labelId="age-label"
@@ -114,8 +113,8 @@ export function AddMovie() {
                 </MenuItem>
               ))}
             </Select>
-          </FormControl>
-          <FormControl sx={styleFormControll} fullWidth>
+          </CustomFormControl>
+          <CustomFormControl>
             <InputLabel id="movie-type-label">Cinema</InputLabel>
             <Select
               labelId="movie-type-label"
@@ -129,8 +128,8 @@ export function AddMovie() {
                 </MenuItem>
               ))}
             </Select>
-          </FormControl>
-          <FormControl sx={styleFormControll}>
+          </CustomFormControl>
+          <CustomFormControl>
             <InputLabel id="genre-label">Genres</InputLabel>
             <Select
               labelId="genre-label"
@@ -147,7 +146,7 @@ export function AddMovie() {
                 </MenuItem>
               ))}
             </Select>
-          </FormControl>
+          </CustomFormControl>
         </AddMovieInfo>
         <SubmitButton type="submit">Add</SubmitButton>
       </AddMovieForm>

@@ -1,6 +1,6 @@
 import { House, PencilSimple, PlusSquare } from "@phosphor-icons/react"
 
-export const congigRoutePath = [
+export const configRouteItem = [
   {
     title: "Dashboard",
     icon: House,

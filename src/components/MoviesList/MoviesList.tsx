@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
-import { MovieCard } from "../MovieCard/MovieCard"
+import { FilmCard } from "../FilmCard/FilmCard"
 import { useGetMovies } from "./hooks/useGetMovies"
 import { MoviesListWrapper, MoviesTitle, MoviesWrapper } from "./styled"
 
@@ -19,7 +19,7 @@ export function MoviesList() {
           : "Movies"}
       </MoviesTitle>
       <MoviesListWrapper>
-        {movies?.map((movie) => <MovieCard {...movie} />)}
+        {movies?.map((movie) => <FilmCard {...movie} />)}
       </MoviesListWrapper>
     </MoviesWrapper>
   )

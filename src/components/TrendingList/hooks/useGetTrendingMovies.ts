@@ -11,7 +11,7 @@ export function useGetTrendingMovies() {
   )
 
   if (error) {
-    console.error("Ошибка при загрузке типов фильмов:", error)
+    console.error("Ошибка при загрузке трендовых фильмов:", error)
   }
 
   return { data: data?.data }

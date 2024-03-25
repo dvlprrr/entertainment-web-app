@@ -8,7 +8,7 @@ Chart.register(ArcElement, Tooltip, Legend)
 
 export function PieChart() {
   const genres = useAppSelector(selectGenres)
-  const chartData = genres?.map((genre) => genre.count)
+  const chartData = genres?.map((genre) => genre.appearanceCount)
   const chartLabels = genres?.map((genre) => genre.name)
   const data = {
     labels: chartLabels,

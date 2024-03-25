@@ -1,10 +1,10 @@
-import { useSelector } from "react-redux"
-import { toggleFavourite } from "../../hooks/service"
 import playIcon from "../../images/playIcon.svg"
-import { Movie } from "../../types/Movie"
+import { Film } from "../../types/Film"
 
-import { selectCurrentUser } from "../../features/users/users-selectors"
-import { FavouriteMovieIcon } from "../FavouriteMovieIcon/FavouriteMovieIcon"
+import { toggleFavourite } from "../../features/users/users-slice"
+import { useCurrentUser } from "../../hooks/useCurrentUser"
+import { useAppDispatch } from "../../redux-hooks"
+import { BookmarkedMovieIcon } from "../BookmarkedMovieIcon/BookmarkedMovieIcon"
 import {
   TrendingCardWrapper,
   TrendingInfoDetails,
@@ -25,16 +25,19 @@ export function TrendingCard({
   year,
   ageRating,
   filmType,
-}: Omit<Movie, "genres">) {
-  const onClick = () => {
-    toggleFavourite(id)
+}: Omit<Film, "genres">) {
+  const currentUser = useCurrentUser()
+  const dispatch = useAppDispatch()
+
+  const handleToggleFavourite = (movieId: number) => {
+    dispatch(toggleFavourite({ movieId })).unwrap()
   }
-  const user = useSelector(selectCurrentUser)
+  const isFavouriteMovie = currentUser?.favourite_movies.includes(id)
   return (
     <TrendingCardWrapper url={url}>
-      <FavouriteMovieIcon
-        isBookmarked={user?.favourite_movies.includes(id) || false}
-        onClick={onClick}
+      <BookmarkedMovieIcon
+        isBookmarked={Boolean(isFavouriteMovie) || false}
+        onClick={() => handleToggleFavourite(id)}
       />
       <TrendingPlay>
         <TrendingPlayIcon src={playIcon} alt="play" />

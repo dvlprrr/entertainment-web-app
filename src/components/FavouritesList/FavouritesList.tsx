@@ -2,9 +2,9 @@
 /* eslint-disable react/jsx-fragments */
 import { useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
-import { useGetFavouriteMoviesForCurrentUser } from "../../pages/hooks/useGetFavouriteMoviesForCurrentUser"
-import { Movie } from "../../types/Movie"
-import { MovieCard } from "../MovieCard/MovieCard"
+import { Film } from "../../types/Film"
+import { FilmCard } from "../FilmCard/FilmCard"
+import { useGetFavouriteMoviesForCurrentUser } from "./hooks/useGetFavouriteMoviesForCurrentUser"
 import {
   EmptyListTitle,
   FavouritesListWrapper,
@@ -41,8 +41,8 @@ export function FavouritesList() {
                   : `Bookmarked ${key}`}
               </FavouritesTitle>
               <FavouritesListWrapper>
-                {favourites[key].map((item: Movie) => (
-                  <MovieCard key={item.id} {...item} />
+                {favourites[key].map((item: Film) => (
+                  <FilmCard key={item.id} {...item} />
                 ))}
               </FavouritesListWrapper>
             </div>

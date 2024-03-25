@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import logo from "../../images/logo.svg"
-import { congigRoutePath } from "./config"
+import { configRouteItem } from "./config"
 import {
   SettingsLogo,
   SettingsNavigationItem,
@@ -16,7 +16,7 @@ export function SettingsNavigation() {
         <SettingsLogo src={logo} alt="logo" />
       </Link>
       <SettingsNavigationListWrapper>
-        {congigRoutePath.map((item) => (
+        {configRouteItem.map((item) => (
           <StyledLink key={item.path} to={item.path}>
             <SettingsNavigationItem>
               <item.icon size={24} />

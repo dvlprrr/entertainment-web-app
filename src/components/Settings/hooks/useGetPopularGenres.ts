@@ -11,7 +11,7 @@ export function useGetPopularGenres() {
   )
 
   if (error) {
-    console.error("Ошибка при загрузке типов фильмов:", error)
+    console.error("Ошибка при загрузке самых популярных жанров:", error)
   }
 
   return { data: data?.data }

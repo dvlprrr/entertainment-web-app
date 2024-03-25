@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
-import { MovieCard } from "../MovieCard/MovieCard"
+import { MovieCard } from "../FilmCard/FilmCard"
 import { useGetTvSeries } from "./hooks/useGetTvSeries"
 import { TvSeriesListWrapper, TvSeriesTitle, TvSeriesWrapper } from "./styled"
 

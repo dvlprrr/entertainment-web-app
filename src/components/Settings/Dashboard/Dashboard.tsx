@@ -1,10 +1,11 @@
 import { User, UsersThree } from "@phosphor-icons/react"
+import { FilmCard } from "../../FilmCard/FilmCard"
 import { LineChart } from "../../LineCharts/LineChart"
-import { MovieCard } from "../../MovieCard/MovieCard"
 import { PieChart } from "../../PieChart/PieChart"
 import { useGetMostPopularFilm } from "../hooks/useGetMostPopularFilm"
 import { useGetPopularGenres } from "../hooks/useGetPopularGenres"
 
+import { useGetTotalUsers } from "../hooks/useGetTotalUsers"
 import {
   ChartTitle,
   ChartsWrapper,
@@ -26,7 +27,7 @@ import {
 export function Dashboard() {
   const { data: popularMovie } = useGetMostPopularFilm()
   const { data: popularGenres } = useGetPopularGenres()
-
+  const { data: countedUsers } = useGetTotalUsers()
   return (
     <DashboardWrapper>
       <DashboardInfoWrapper>
@@ -41,7 +42,7 @@ export function Dashboard() {
           <User size={70} weight="thin" />
           <DashboardInfoContent>
             <DashboardInfoTitle>USERS ONLINE</DashboardInfoTitle>
-            <DashboardInfoAmount>1</DashboardInfoAmount>
+            <DashboardInfoAmount>{countedUsers}</DashboardInfoAmount>
           </DashboardInfoContent>
         </DashboardInfo>
         <DashboardInfoGenres style={{ gridArea: "genres" }}>
@@ -57,7 +58,7 @@ export function Dashboard() {
         <DashboardInfoMovie style={{ gridArea: "film" }}>
           <DashboardInfoTitle>MOST POPULAR FILM</DashboardInfoTitle>
           <DashboardInfoContentMovie>
-            {popularMovie && <MovieCard {...popularMovie} />}
+            {popularMovie && <FilmCard {...popularMovie} />}
           </DashboardInfoContentMovie>
         </DashboardInfoMovie>
       </DashboardInfoWrapper>
