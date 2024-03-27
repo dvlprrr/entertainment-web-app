@@ -11,7 +11,7 @@ export function useGetFavouriteMoviesForCurrentUser(searchValue: string) {
   )
 
   if (error) {
-    console.error("Ошибка при загрузке типов фильмов:", error)
+    console.error("Ошибка при загрузке любимых фильмов:", error)
   }
 
   return { favourites: data?.data.favourites_movies, refetch }

@@ -45,6 +45,7 @@ export const useActionsWithMovies = () => {
 
     return selectedGenresIds.filter((id) => id !== 0)
   }
+
   useEffect(() => {
     setMovieType("")
     setAge("")

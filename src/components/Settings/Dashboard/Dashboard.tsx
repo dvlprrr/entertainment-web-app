@@ -35,14 +35,14 @@ export function Dashboard() {
           <UsersThree size={70} weight="thin" />
           <DashboardInfoContent>
             <DashboardInfoTitle>TOTAL USERS</DashboardInfoTitle>
-            <DashboardInfoAmount>1</DashboardInfoAmount>
+            <DashboardInfoAmount>{countedUsers}</DashboardInfoAmount>
           </DashboardInfoContent>
         </DashboardInfo>
         <DashboardInfo style={{ gridArea: "online" }}>
           <User size={70} weight="thin" />
           <DashboardInfoContent>
             <DashboardInfoTitle>USERS ONLINE</DashboardInfoTitle>
-            <DashboardInfoAmount>{countedUsers}</DashboardInfoAmount>
+            <DashboardInfoAmount>1</DashboardInfoAmount>
           </DashboardInfoContent>
         </DashboardInfo>
         <DashboardInfoGenres style={{ gridArea: "genres" }}>

@@ -11,7 +11,7 @@ export function useGetAllMovies(searchValue: string) {
   )
 
   if (error) {
-    console.error("Ошибка при загрузке типов фильмов:", error)
+    console.error("Ошибка при загрузке всех фильмов:", error)
   }
 
   return { data: data?.data, refetch }

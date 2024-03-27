@@ -3,8 +3,7 @@ import { useDispatch } from "react-redux"
 import { useMediaQuery } from "react-responsive"
 import { logOut } from "../../features/users/users-slice"
 import { useCurrentUser } from "../../hooks/useCurrentUser"
-import { NavigationMenuDesktop } from "./NavigationMenuDesktop"
-import { NavigationMenuMobile } from "./NavigationMenuMobile"
+import { NavigationMenuAdaptive } from "./NavigationMenuAdaptive"
 import {
   Nav,
   NavigationImageWrapper,
@@ -14,6 +13,7 @@ import {
   TooltipItem,
   TooltipLink,
   TooltipMenu,
+  WrapperNavigation,
 } from "./styled"
 
 export function NavigationMenu() {
@@ -25,7 +25,13 @@ export function NavigationMenu() {
   }
   return (
     <Nav>
-      {!isMatches768 ? <NavigationMenuDesktop /> : <NavigationMenuMobile />}
+      {!isMatches768 ? (
+        <WrapperNavigation>
+          <NavigationMenuAdaptive />
+        </WrapperNavigation>
+      ) : (
+        <NavigationMenuAdaptive />
+      )}
       <NavigationImageWrapper id="settings">
         <NavigationUserImage src={currentUser?.avatar} />
       </NavigationImageWrapper>

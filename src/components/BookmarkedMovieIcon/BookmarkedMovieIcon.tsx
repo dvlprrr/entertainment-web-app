@@ -1,3 +1,4 @@
+import { isEqual } from "lodash"
 import { memo } from "react"
 import { BookmarkedMovie, BookmarkedMovieWrapper } from "./styled"
 
@@ -11,4 +12,5 @@ export const BookmarkedMovieIcon = memo(
       <BookmarkedMovie />
     </BookmarkedMovieWrapper>
   ),
+  isEqual,
 )

@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
-import { MovieCard } from "../FilmCard/FilmCard"
+import { FilmCard } from "../FilmCard/FilmCard"
 import { useGetTvSeries } from "./hooks/useGetTvSeries"
 import { TvSeriesListWrapper, TvSeriesTitle, TvSeriesWrapper } from "./styled"
 
@@ -20,7 +20,7 @@ export function TvSeriesList() {
           : "TV Series"}
       </TvSeriesTitle>
       <TvSeriesListWrapper>
-        {tvSeries?.map((movie) => <MovieCard {...movie} />)}
+        {tvSeries?.map((movie) => <FilmCard {...movie} />)}
       </TvSeriesListWrapper>
     </TvSeriesWrapper>
   )
